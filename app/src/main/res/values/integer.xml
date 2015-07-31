@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="motion_list_long_press_msec">300</integer>
+</resources>

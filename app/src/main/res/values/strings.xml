@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Scenography</string>
+
+    <string name="action_licenses">Open source licenses</string>
+    <string name="button_name">Button</string>
+    <string name="title_edit_fragment">Scenography</string>
+    <string name="navigation_drawer_open">open drawer</string>
+    <string name="navigation_drawer_close">close drawer</string>
+    <string name="program_list_title">PROGRAM</string>
+    <string name="action_save_program">プログラムを保存する</string>
+    <string name="action_delete_program">プログラムを削除する</string>
+    <string name="action_write_program">プログラムをPLENに送る</string>
+    <string name="action_search_plen">PLENに接続する</string>
+    <string name="action_open_program">プログラムを開く</string>
+</resources>
