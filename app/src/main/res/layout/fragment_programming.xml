@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevation_low"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/OptionMenuPopupTheme"
+        app:theme="@style/OptionMenuTheme"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/program_list_title_view"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="?attr/colorPrimary"
+                android:elevation="@dimen/elevation_low"
+                android:gravity="bottom|center"
+                android:paddingBottom="14dp"
+                android:text="@string/program_list_title"
+                android:theme="@style/OptionMenuTheme"
+                android:textSize="@dimen/text_size_small"/>
+
+            <jp.plen.scenography.views.ProgramListView
+                android:id="@+id/program_list_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/program_list_title_view"
+                style="@style/MotionListStyle"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="2sp"
+            android:layout_height="match_parent"
+            android:background="@color/theme500"/>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/motion_list_pager"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <android.support.v4.view.PagerTabStrip
+                android:id="@+id/pager_tab_strip"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="top"
+                android:background="?attr/colorPrimary"
+                android:elevation="@dimen/elevation_low"
+                android:gravity="bottom|center"
+                android:paddingBottom="14dp"
+                android:theme="@style/OptionMenuTheme"
+                android:textSize="@dimen/text_size_small"/>
+
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+</LinearLayout>

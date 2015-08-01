@@ -1,0 +1,18 @@
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="navigation_drawer_width">240dp</dimen>
+
+    <dimen name="text_size_xsmall">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+    <dimen name="text_size_xlarge">34sp</dimen>
+
+    <dimen name="elevation_low">2dp</dimen>
+    <dimen name="elevation_middle">4dp</dimen>
+    <dimen name="elevation_high">8dp</dimen>
+
+    <dimen name="motion_icon_width">40dp</dimen>
+    <dimen name="motion_icon_height">40dp</dimen>
+</resources>

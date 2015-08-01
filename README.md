@@ -1,1 +1,2 @@
-# plen__scenography
+# Scenography
+PLEN visual programming tool
