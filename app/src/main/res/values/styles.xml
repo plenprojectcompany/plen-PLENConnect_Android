@@ -1,28 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/theme500</item>
-        <item name="colorPrimaryDark">@color/theme600</item>
-        <item name="android:textColorPrimary">@color/primary_text_default_material_light</item>
-        <item name="android:textColorSecondary">@color/secondary_text_default_material_light</item>
-        <item name="windowActionModeOverlay">false</item>
-        <item name="android:windowBackground">@color/white</item>
-        <item name="android:textColor">@color/primary_text_default_material_light</item>
-        <item name="android:activatedBackgroundIndicator">@drawable/activate_background_indicator
-        </item>
-    </style>
-
-    <style name="OptionMenuTheme" parent="MainTheme">
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/white</item>
-        <item name="android:textColor">@color/white</item>
-    </style>
-
-    <style name="OptionMenuPopupTheme" parent="MainTheme">
-    </style>
-
-    <style name="MotionListStyle" parent="MainTheme">
-        <item name="android:divider">@color/theme200</item>
+    <style name="PlenMotionListStyle" parent="MainTheme">
+        <item name="android:divider">@color/plen_light_grey</item>
         <item name="android:dividerHeight">1sp</item>
         <item name="android:clipToPadding">false</item>
         <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
@@ -30,11 +9,8 @@
         <item name="android:scrollbars">vertical</item>
         <item name="android:fadeScrollbars">true</item>
         <item name="android:scrollbarThumbVertical">@drawable/scrollbar_thumb</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
         <item name="android:scrollbarSize">12dp</item>
     </style>
-
-    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
-    </style>
-
 </resources>

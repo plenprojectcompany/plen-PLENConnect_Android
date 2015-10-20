@@ -1,0 +1,65 @@
+<resources>
+    <!-- app -->
+    <string name="app_name">Scenography</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- motion -->
+    <string name="program_title">PROGRAM</string>
+    <string name="joystick_title">JOYSTICK</string>
+    <string name="no_icon_path">file:///android_asset/img/motion/no_icon.png</string>
+    <string name="motion_loop_count_hint">1</string>
+    <string name="motion_icon_description">icon</string>
+    <string name="multiplication_sign">×</string>
+    <string name="unknown_motion_id">\??</string>
+    <string name="unknown_motion_name">Unknown</string>
+
+    <!-- data -->
+    <string name="sample_program_directory">sample/</string>
+    <string name="sequence_file_name">sequence.json</string>
+    <string name="motions_file_name">motions.json</string>
+
+    <!-- acton -->
+    <string name="action_delete_program">Delete</string>
+    <string name="action_write_program">Run</string>
+    <string name="action_search_plen">Search PLEN</string>
+    <string name="action_licenses">Open source licenses</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_rescan">Retry</string>
+
+    <!-- message -->
+    <string name="scanning_plen">Scanning PLEN</string>
+    <string name="plen_not_found">PLEN not found</string>
+    <string name="select_plen">Select PLEN</string>
+    <string name="plen_connected">PLEN connected</string>
+    <string name="plen_disconnected">PLEN disconnected</string>
+    <string name="please_wait">Wait for a few minutes</string>
+    <string name="connection_error">Connection Error</string>
+
+    <!-- dialog -->
+    <string name="scanning_dialog_title">@string/scanning_plen</string>
+    <string name="scanning_dialog_message">@string/please_wait</string>
+    <string name="select_plen_dialog_title">@string/select_plen</string>
+    <string name="plen_not_found_dialog_title">@string/plen_not_found</string>
+    <string name="plen_not_found_dialog_message">Reboot the PLEN if you can not connect to it.</string>
+
+    <!-- log -->
+    <string name="log_ble_disconnected">Disconnected from the GATT server.</string>
+    <string name="log_ble_connecting">Connecting to the GATT server.</string>
+    <string name="log_ble_connecting_failed">Connecting to the GATT server failed.</string>
+    <string name="log_ble_connected">Connected to the GATT server.</string>
+    <string name="log_ble_service_discovering">Discovering the GATT service.</string>
+    <string name="log_ble_service_discovered">The PLEN Gatt services has been explored successfully.</string>
+    <string name="log_ble_disconnecting">Disconnecting from the GATT server.</string>
+    <string name="log_ble_scanning">Scanning.</string>
+    <string name="log_ble_scan_complete">Scan complete.</string>
+    <string name="log_ble_connecting_or_disconnecting_failed">Connecting or Disconnecting failed.</string>
+    <string name="log_ble_services_discovering_failed">Discovering the GATT services failed.</string>
+    <string name="log_ble_found_service">Found a service: UUID=%1$s</string>
+    <string name="log_ble_discovering_failed">Discovering the GATT service failed.</string>
+    <string name="log_ble_control_service_not_found">Could not find the PLEN Control Service.</string>
+    <string name="log_ble_txdata_not_found">Could not find the TxData characteristic.</string>
+    <string name="log_ble_service_idle">The PLEN Gatt services is idle.</string>
+    <string name="log_ble_writing">Writing to the TxData characteristic.</string>
+    <string name="log_ble_writing_failed">Writing to the TxData characteristic failed.</string>
+</resources>

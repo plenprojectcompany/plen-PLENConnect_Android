@@ -1,32 +1,38 @@
-<android.support.v4.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="1">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevation_low"
+        android:theme="@style/OptionMenuTheme"
+        app:popupTheme="@style/OptionMenuPopupTheme"/>
 
     <LinearLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentStart="true"/>
 
-        <!-- Main Content -->
-        <LinearLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
-    </LinearLayout>
-
-    <!-- Navigation Drawer -->
-    <fragment
-        android:id="@+id/navigation_drawer"
-        android:name="jp.plen.scenography.fragments.NavigationDrawerFragment"
-        android:layout_width="@dimen/navigation_drawer_width"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        tools:layout="@layout/fragment_navigation_drawer"/>
-
-</android.support.v4.widget.DrawerLayout>
+    <ImageButton
+        android:id="@+id/joystickIcon"
+        style="@style/PlenMotionListStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/ripple_effect_joystick_icon"
+        android:contentDescription="@string/motion_icon_description"
+        android:elevation="@dimen/elevation_middle"
+        android:scaleType="fitCenter"
+        android:src="@drawable/joystick_icon"/>
+</RelativeLayout>

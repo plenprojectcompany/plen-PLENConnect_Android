@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer name="motion_id_min">0x00</integer>
+    <integer name="motion_id_max">0xFF</integer>
+    <integer name="motion_loop_min">0x01</integer>
+    <integer name="motion_loop_max">0xFF</integer>
+    <integer name="motion_loop_default">0x01</integer>
     <integer name="motion_list_long_press_msec">300</integer>
+    <integer name="plen_scan_service_stop_delay_sec">3</integer>
+    <integer name="plen_connection_service_stop_delay_sec">3</integer>
+    <integer name="plen_scan_timeout_sec">1</integer>
+    <integer name="walk_command_repeat_interval_msec">500</integer>
 </resources>
