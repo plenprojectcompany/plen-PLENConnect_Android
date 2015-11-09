@@ -46,6 +46,26 @@
         "id": 8,
         "icon": "file:///android_asset/img/motion/normal/normal__high-five.png",
         "name": "High-five"
+      },
+      {
+        "id": 70,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Forward"
+      },
+      {
+        "id": 71,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "LTurn"
+      },
+      {
+        "id": 72,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "RTurn"
+      },
+      {
+        "id": 73,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Back"
       }
     ]
   },
@@ -96,6 +116,26 @@
         "id": 18,
         "icon": "file:///android_asset/img/motion/box/box__put_down_low.png",
         "name": "Put Down Low"
+      },
+      {
+        "id": 74,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Carry Forward"
+      },
+      {
+        "id": 75,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Carry LTurn"
+      },
+      {
+        "id": 76,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Carry RTurn"
+      },
+      {
+        "id": 77,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Carry Back"
       }
     ]
   },
@@ -146,6 +186,26 @@
         "id": 28,
         "icon": "file:///android_asset/img/motion/soccer/soccer__pass_to_right.png",
         "name": "Pass to Right"
+      },
+      {
+        "id": 70,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Forward"
+      },
+      {
+        "id": 71,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "LTurn"
+      },
+      {
+        "id": 72,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "RTurn"
+      },
+      {
+        "id": 73,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Back"
       }
     ]
   },
@@ -196,6 +256,26 @@
         "id": 38,
         "icon": "file:///android_asset/img/motion/dance/dance__twist.png",
         "name": "Twist Dance"
+      },
+      {
+        "id": 70,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Forward"
+      },
+      {
+        "id": 71,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "LTurn"
+      },
+      {
+        "id": 72,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "RTurn"
+      },
+      {
+        "id": 73,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Walk Back"
       }
     ]
   },
@@ -210,7 +290,7 @@
       {
         "id": 41,
         "icon": "file:///android_asset/img/motion/roller_skating/roller_skating__brake_for_forward.png",
-        "name": "Breake for Forward"
+        "name": "Brake for Forward"
       },
       {
         "id": 42,
@@ -246,6 +326,26 @@
         "id": 48,
         "icon": "file:///android_asset/img/motion/roller_skating/roller_skating__heel___toe_rfoot.png",
         "name": "Heel & Toe RFoot"
+      },
+      {
+        "id": 78,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Skating Forward"
+      },
+      {
+        "id": 79,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Skating LTurn"
+      },
+      {
+        "id": 80,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Skating RTurn"
+      },
+      {
+        "id": 81,
+        "icon": "file:///android_asset/img/motion/no_image.png",
+        "name": "Skating Back"
       }
     ]
   }

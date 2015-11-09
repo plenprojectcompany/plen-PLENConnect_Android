@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 
 import jp.plen.scenography.R;
 import jp.plen.scenography.models.PlenProgramModel;
+import jp.plen.scenography.models.entities.PlenMotionCategory;
 import jp.plen.scenography.models.entities.PlenWalk;
 import jp.plen.scenography.views.JoystickView;
 import jp.plen.scenography.views.adapters.PlenMotionListPagerAdapter;
@@ -65,6 +66,15 @@ public class JoystickFragment extends Fragment implements IJoystickFragment {
         mMotionListViewPager.setAdapter(mPlenMotionListPagerAdapter);
     }
 
+    @NonNull
+    private PlenMotionCategory categoryFilter(@NonNull PlenMotionCategory category) {
+        return new PlenMotionCategory(
+                category.getName(),
+                Observable.from(category.getMotions())
+                        .filter(motion -> !(70 <= motion.getId() && motion.getId() <= 81))
+                        .toList().toBlocking().single());
+    }
+
 
     @NonNull
     @Override
@@ -75,7 +85,9 @@ public class JoystickFragment extends Fragment implements IJoystickFragment {
 
         // motion list
         mPlenMotionListPagerAdapter.setDraggable(false);
-        binding.add(mPlenMotionListPagerAdapter.bind(model.motionCategories().asObservable()));
+        binding.add(mPlenMotionListPagerAdapter.bind(
+                model.motionCategories().asObservable().flatMap(categories ->
+                        Observable.from(categories).map(this::categoryFilter).toList())));
 
         // joystick
         double gain_min = 0.5;
