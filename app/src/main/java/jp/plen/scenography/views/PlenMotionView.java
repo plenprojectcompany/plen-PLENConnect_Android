@@ -1,88 +1,121 @@
 package jp.plen.scenography.views;
 
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-import android.os.RemoteException;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import jp.plen.bluetooth.le.IPlenBluetoothLeService;
-import jp.plen.bluetooth.le.PlenBluetoothLeService;
+import com.squareup.picasso.Picasso;
+
+import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.EViewGroup;
+import org.androidannotations.annotations.ViewById;
+
+import de.greenrobot.event.EventBus;
+import jp.plen.rx.binding.Property;
+import jp.plen.rx.binding.ReadOnlyProperty;
 import jp.plen.scenography.R;
-import jp.plen.scenography.models.PlenMotion;
-import jp.plen.scenography.utils.PlenMotionIconLoader;
+import jp.plen.scenography.models.entities.PlenMotion;
+import jp.plen.scenography.services.PlenConnectionService;
+import jp.plen.scenography.utils.PlenCommandUtil;
+import rx.Observable;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.subscriptions.CompositeSubscription;
 
-public class PlenMotionView extends LinearLayout {
+@EViewGroup(R.layout.view_plen_motion)
+public class PlenMotionView extends RelativeLayout {
     private static final String TAG = PlenMotionView.class.getSimpleName();
-    private IPlenBluetoothLeService mService;
-    private PlenMotion mMotion;
-    private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            mService = IPlenBluetoothLeService.Stub.asInterface(service);
-        }
+    private final CompositeSubscription mSubscriptions = new CompositeSubscription();
+    private final Property<PlenMotion> mMotion = Property.create();
+    @ViewById(R.id.rowButton) Button mRowButton;
+    @ViewById(R.id.motionIcon) ImageButton mIconView;
+    @ViewById(R.id.motionName) TextView mNameView;
+    @ViewById(R.id.motionNumber) TextView mNumberView;
 
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-            mService = null;
-        }
-    };
-
-    public PlenMotionView(Context context, AttributeSet attrs) {
-        this(context, attrs, R.layout.view_plen_motion);
+    public PlenMotionView(Context context) {
+        super(context);
     }
 
-    protected PlenMotionView(Context context, AttributeSet attrs, int layout) {
+    public PlenMotionView(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        LayoutInflater.from(context).inflate(layout, this);
     }
 
-    public PlenMotion getMotion() {
+    public PlenMotionView(@NonNull Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    public PlenMotionView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+    @NonNull
+    public ReadOnlyProperty<PlenMotion> motion() {
         return mMotion;
     }
 
-    public void setMotion(PlenMotion plenMotion) {
-        mMotion = plenMotion;
+    @NonNull
+    public Subscription bind(@NonNull Observable<PlenMotion> motion) {
+        ReadOnlyProperty.create(motion).get().ifPresent(this::updateViews);
+        Subscription subscription = mMotion.bind(motion);
+        mSubscriptions.add(subscription);
+        return subscription;
+    }
 
-        TextView nameView = (TextView) findViewById(R.id.motion_name_view);
-        nameView.setText(plenMotion.getName());
-        TextView numberView;
-        numberView = (TextView) findViewById(R.id.motion_number_view);
-        numberView.setText(String.format("%02X", plenMotion.getNumber()));
-        final ImageButton iconView = (ImageButton) findViewById(R.id.motion_icon_view);
-
-        iconView.setOnLongClickListener(v -> {
-            if (mService == null || mMotion == null) return false;
-            try {
-                mService.write("$MP" + String.format("%02X", mMotion.getNumber()));
-                return true;
-            } catch (RemoteException e) {
-                e.printStackTrace();
-                return false;
-            }
-        });
-
-        PlenMotionIconLoader.load(iconView, plenMotion.getIconName());
+    public void setRowButtonVisibility(int visibility) {
+        mRowButton.setVisibility(visibility);
+        if (mRowButton.getVisibility() == VISIBLE) {
+            mIconView.setElevation(0);
+        } else {
+            mIconView.setElevation(getResources().getDimension(R.dimen.elevation_low));
+        }
     }
 
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-
-        Intent intent = new Intent(getContext(), PlenBluetoothLeService.class);
-        getContext().bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
+        initSubscriptions();
     }
 
     @Override
     protected void onDetachedFromWindow() {
-        getContext().unbindService(mServiceConnection);
+        mSubscriptions.unsubscribe();
         super.onDetachedFromWindow();
+    }
+
+    @AfterViews
+    void afterViews() {
+        if (isInEditMode()) return;
+        Picasso.with(getContext())
+                .load(getResources().getString(R.string.no_icon_path))
+                .into(mIconView);
+    }
+
+    private void updateViews(@NonNull PlenMotion motion) {
+        Picasso.with(getContext())
+                .load(motion.getIconPath())
+                .resizeDimen(R.dimen.motion_icon_width, R.dimen.motion_icon_height)
+                .into(mIconView);
+        mNameView.setText(motion.getName());
+        mNumberView.setText(String.format("%02X", motion.getId()));
+        mIconView.setOnLongClickListener(v -> sendMotionPlayCommand(motion));
+        mRowButton.setOnClickListener(v -> sendMotionPlayCommand(motion));
+    }
+
+    private boolean sendMotionPlayCommand(@NonNull PlenMotion motion) {
+        String command = PlenCommandUtil.toCommand(motion);
+        EventBus.getDefault().post(new PlenConnectionService.WriteRequest(command));
+        return false;
+    }
+
+    private void initSubscriptions() {
+        mSubscriptions.clear();
+
+        mSubscriptions.add(mMotion.asObservable()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(this::updateViews));
     }
 }

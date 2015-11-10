@@ -1,40 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="72dp"
     android:background="?android:activatedBackgroundIndicator"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:gravity="center_vertical">
 
-    <ImageButton
-        android:id="@+id/motion_icon_view"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:background="@drawable/ripple_effect"
-        android:layout_margin="3dp"
-        android:padding="13dp"
-        style="@style/MotionListStyle"/>
+    <Button
+        android:id="@+id/rowButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ripple_effect_motion_list_item"
+        android:visibility="invisible"/>
 
-    <TextView
-        android:id="@+id/motion_number_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="00"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/text_size_small"
-        android:textColor="@color/grey500"
-        style="@style/MotionListStyle"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/motion_name_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="name"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/text_size_large"
-        style="@style/MotionListStyle"/>
+        <ImageButton
+            android:id="@+id/motionIcon"
+            style="@style/PlenMotionListStyle"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="6dp"
+            android:background="@drawable/ripple_effect_motion_icon"
+            android:contentDescription="@string/motion_icon_description"
+            android:elevation="@dimen/elevation_low"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_icon"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/motionNumber"
+            style="@style/PlenMotionListStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:text="@string/unknown_motion_id"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/text_size_small"/>
+
+        <TextView
+            android:id="@+id/motionName"
+            style="@style/PlenMotionListStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/unknown_motion_name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/text_size_large"/>
+    </LinearLayout>
+</RelativeLayout>

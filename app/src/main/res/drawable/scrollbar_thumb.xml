@@ -6,7 +6,7 @@
         android:right="4dp"
         android:top="8dp">
         <shape>
-            <solid android:color="@color/theme200"/>
+            <solid android:color="@color/plen_light_grey"/>
             <corners android:radius="8dp"/>
             <size android:width="4dp"/>
         </shape>

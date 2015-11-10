@@ -1,40 +1,38 @@
 package jp.plen.scenography;
 
 import android.app.Application;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.os.IBinder;
+import android.support.annotation.NonNull;
 
-import jp.plen.bluetooth.le.PlenBluetoothLeService;
+import org.androidannotations.annotations.AfterInject;
+import org.androidannotations.annotations.EApplication;
 
-/**
- * Created by kzm4269 on 15/07/25.
- */
+import jp.plen.scenography.models.ScenographyModel;
+
+@EApplication
 public class Scenography extends Application {
     private static final String TAG = Scenography.class.getSimpleName();
-    private ServiceConnection mServiceConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-        }
+    private static Scenography sInstance;
 
-        @Override
-        public void onServiceDisconnected(ComponentName name) {
-        }
-    };
+    private ScenographyModel mModel;
+
+    public Scenography() {
+        sInstance = this;
+    }
+
+    @AfterInject
+    void afterInject() {
+        mModel = ScenographyModel.create(this);
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        Intent intent = new Intent(getBaseContext(), PlenBluetoothLeService.class);
-        bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
     }
 
-    @Override
-    public void onTerminate() {
-        unbindService(mServiceConnection);
-        super.onTerminate();
+    @NonNull
+    public static ScenographyModel getModel() {
+        if (sInstance == null) throw new AssertionError();
+        if (sInstance.mModel == null) throw new AssertionError();
+        return sInstance.mModel;
     }
 }

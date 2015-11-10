@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:textColorPrimary">@color/plen_black</item>
+        <item name="android:textColorSecondary">@color/plen_black</item>
+        <item name="windowActionModeOverlay">false</item>
+        <item name="android:windowBackground">@color/plen_white</item>
+        <item name="android:textColor">@color/plen_black</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background_indicator
+        </item>
+    </style>
+
+    <style name="OptionMenuTheme" parent="MainTheme">
+        <item name="android:textColorPrimary">@color/plen_white</item>
+        <item name="android:textColorSecondary">@color/plen_white</item>
+        <item name="android:textColor">@color/plen_white</item>
+    </style>
+
+    <style name="OptionMenuPopupTheme" parent="MainTheme">
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+    </style>
+
+</resources>

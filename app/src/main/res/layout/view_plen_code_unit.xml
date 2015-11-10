@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="?android:activatedBackgroundIndicator"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <jp.plen.scenography.views.PlenMotionView_
+        android:id="@+id/plenMotion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <TextView
+        style="@style/PlenMotionListStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="@string/multiplication_sign"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/text_size_medium"/>
+
+    <EditText
+        android:id="@+id/loopCount"
+        style="@style/PlenMotionListStyle"
+        android:layout_width="30pt"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/motion_loop_count_hint"
+        android:inputType="numberSigned"
+        android:longClickable="false"
+        android:textSize="@dimen/text_size_large"/>
+</LinearLayout>

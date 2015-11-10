@@ -1,39 +1,82 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
+
+def VERSION_CODE = 1
+def VERSION_NAME = "1.0.0"
+def PACKAGE_NAME = "jp.plen.scenography"
 
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "jp.plen.scenography"
+        applicationId PACKAGE_NAME
         minSdkVersion 21
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
     }
     buildTypes {
-        release {
+        debug {
+            debuggable true
             minifyEnabled false
+            zipAlignEnabled true
+            applicationIdSuffix ".debug"
+            versionNameSuffix '-dev'
+        }
+        release {
+            debuggable false
+            minifyEnabled false
+            zipAlignEnabled true
+
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/NOTICE'
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
+apt {
+    arguments {
+        //noinspection GroovyAssignabilityCheck
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        resourcePackageName android.defaultConfig.applicationId
+    }
+}
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.4'
-    compile 'io.reactivex:rxandroid:0.24.0'
+    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'io.reactivex:rxjava:1.0.14'
+    compile 'io.reactivex:rxjava-async-util:0.21.0'
+    compile 'io.reactivex:rxandroid:1.0.1'
+    compile 'com.eccyan:rxjava-optional:1.1.0'
+    compile 'com.ogaclejapan:rxbinding:1.2.0'
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    def JacksonVersion = '2.3.4'
+    compile "com.fasterxml.jackson.core:jackson-core:$JacksonVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$JacksonVersion"
+    def AAVersion = '3.3.2'
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    // unit test
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    testCompile 'org.robolectric:robolectric:3.0-rc2'
+    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
 }
