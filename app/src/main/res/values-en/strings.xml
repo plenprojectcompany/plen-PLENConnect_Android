@@ -1,4 +1,6 @@
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:locale="en">
     <!-- app -->
     <string name="app_name">Scenography</string>
     <string name="action_settings">Settings</string>
@@ -62,4 +64,5 @@
     <string name="log_ble_service_idle">The PLEN Gatt services is idle.</string>
     <string name="log_ble_writing">Writing to the TxData characteristic.</string>
     <string name="log_ble_writing_failed">Writing to the TxData characteristic failed.</string>
+    <string name="log_plen_connection_service_initialized">PlenConnectionService initialized</string>
 </resources>

@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="log_plen_connection_service_initialized">PlenConnectionService initialized</string>
 </resources>
