@@ -2,109 +2,109 @@
 <items version="2" >
 
     <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/eventbus-2.4.0-82ab1e4a3c84c1ed339cb247da34d387fb89f361.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.4/c9478f1871de4c9cf723e5d497a14c7ad274a50b/jackson-databind-2.3.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="c9478f1871de4c9cf723e5d497a14c7ad274a50b">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/jackson-databind-2.3.4-c640f957f10bd768a6ff9c7a6db2db01f3c4a3b1.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.4/801fecfb8baf0ba5296e2d2ea0664f72b0761b9a/jackson-core-2.3.4.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="801fecfb8baf0ba5296e2d2ea0664f72b0761b9a">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/jackson-core-2.3.4-a8164bfa87b55a9b0f039fc337080bca99dd13f6.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.ogaclejapan/rxbinding/1.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="95f8d95f44b53eb05c0fd9735eb4ffffe2313f08">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/classes-fb798ca95f5210ed8e04f3b72ff8f42c03cd1d2e.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/classes-6960ab39321aecee089fcf5f36098c6d2e704d7d.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.2/7d6149d856b880bbd676047aacb8446a758fbbdb/androidannotations-api-3.3.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="7d6149d856b880bbd676047aacb8446a758fbbdb">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/androidannotations-api-3.3.2-21b9e23707095c97dc4da118b619216ad5d6a839.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/classes-574ceddffe4e4fe162b443bbd2cd6b931af37eda.jar" />
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/picasso-2.5.2-4da7bc066692d28a99677f97385e080961f91a16.jar" />
     </item>
     <item
         jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.eccyan/rxjava-optional/1.1.0/ea9f53b77cdc29027ec4ada483b5cafeb44aca2/rxjava-optional-1.1.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="0ea9f53b77cdc29027ec4ada483b5cafeb44aca2">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/rxjava-optional-1.1.0-caf7109f22da667c8070f48c24ad82ec6f8960f3.jar" />
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/rxjava-optional-1.1.0-caf7109f22da667c8070f48c24ad82ec6f8960f3.jar" />
     </item>
     <item
         jar="/home/kzm4269/opt/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-123878266526ba97dd90556d14e39078de7796fb.jar" />
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/support-annotations-22.2.0-123878266526ba97dd90556d14e39078de7796fb.jar" />
     </item>
     <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.2/7d6149d856b880bbd676047aacb8446a758fbbdb/androidannotations-api-3.3.2.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/picasso-2.5.2-4da7bc066692d28a99677f97385e080961f91a16.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/classes-f5dc9d3a5643700cb53cd05d593c9cb26bea67df.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava-async-util/0.21.0/46d17bf13427f275c25c22eaccbfb4a8da1da85a/rxjava-async-util-0.21.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="46d17bf13427f275c25c22eaccbfb4a8da1da85a">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/rxjava-async-util-0.21.0-d7682c7ae9d6c7d34328ad96e797976112979bb9.jar" />
-    </item>
-    <item
-        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.3.0-25d868114faa2495fc6016f41c166f138aa126c3.jar" />
+        sha1="7d6149d856b880bbd676047aacb8446a758fbbdb">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/androidannotations-api-3.3.2-21b9e23707095c97dc4da118b619216ad5d6a839.jar" />
     </item>
     <item
         jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.14/898f9ab61e2a23afd615f0b0389478bec86f49f9/rxjava-1.0.14.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="898f9ab61e2a23afd615f0b0389478bec86f49f9">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/rxjava-1.0.14-d9fc39f36bdc5b16e0d39be461deff328e8c1292.jar" />
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/rxjava-1.0.14-d9fc39f36bdc5b16e0d39be461deff328e8c1292.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/eventbus-2.4.0-82ab1e4a3c84c1ed339cb247da34d387fb89f361.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes-f5dc9d3a5643700cb53cd05d593c9cb26bea67df.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-annotations-2.3.0-25d868114faa2495fc6016f41c166f138aa126c3.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.4/801fecfb8baf0ba5296e2d2ea0664f72b0761b9a/jackson-core-2.3.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="801fecfb8baf0ba5296e2d2ea0664f72b0761b9a">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-core-2.3.4-a8164bfa87b55a9b0f039fc337080bca99dd13f6.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava-async-util/0.21.0/46d17bf13427f275c25c22eaccbfb4a8da1da85a/rxjava-async-util-0.21.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="46d17bf13427f275c25c22eaccbfb4a8da1da85a">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/rxjava-async-util-0.21.0-d7682c7ae9d6c7d34328ad96e797976112979bb9.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes-6960ab39321aecee089fcf5f36098c6d2e704d7d.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.ogaclejapan/rxbinding/1.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="95f8d95f44b53eb05c0fd9735eb4ffffe2313f08">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes-fb798ca95f5210ed8e04f3b72ff8f42c03cd1d2e.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes-574ceddffe4e4fe162b443bbd2cd6b931af37eda.jar" />
+    </item>
+    <item
+        jar="/home/kzm4269/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.4/c9478f1871de4c9cf723e5d497a14c7ad274a50b/jackson-databind-2.3.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c9478f1871de4c9cf723e5d497a14c7ad274a50b">
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-databind-2.3.4-c640f957f10bd768a6ff9c7a6db2db01f3c4a3b1.jar" />
     </item>
     <item
         jar="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b00e0cf7dd7c4e25fb16651236f5bed22e9da039.jar" />
+        <dex dex="/home/kzm4269/work/plen2/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0-b00e0cf7dd7c4e25fb16651236f5bed22e9da039.jar" />
     </item>
 
 </items>
