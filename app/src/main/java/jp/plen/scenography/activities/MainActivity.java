@@ -92,14 +92,12 @@ public class MainActivity extends Activity implements IMainActivity {
         startActivityForResult(intent, requestCode);
     }
 
+    @UiThread
     @Override
-    public synchronized void notifyLocationUnavailable() {
-
+    public void notifyLocationUnavailable() {
         CompositeSubscription subscriptions = new CompositeSubscription();
-
         LocationSettingRequestDialogFragment fragment = LocationSettingRequestDialogFragment_.builder()
                 .build();
-
         fragment.allowEvent()
                 .lift(Operators.composite(subscriptions))
                 .subscribe(v -> {
@@ -107,8 +105,7 @@ public class MainActivity extends Activity implements IMainActivity {
                     int requestCode = 1;
                     startActivityForResult(intent, requestCode);
                 });
-
-        mFragmentManager.ifPresent(m -> fragment.show(m, SELECT_PLEN_DIALOG));
+        mFragmentManager.ifPresent(m -> fragment.show(m, LOCATION_SETTING_DIALOG));
         mSubscriptions.add(subscriptions);
     }
 
@@ -163,7 +160,7 @@ public class MainActivity extends Activity implements IMainActivity {
                 .lift(Operators.composite(subscriptions))
                 .subscribe(v -> mPresenter.startScan());
 
-        mFragmentManager.ifPresent(m -> fragment.show(m, LOCATION_SETTING_DIALOG));
+        mFragmentManager.ifPresent(m -> fragment.show(m, SELECT_PLEN_DIALOG));
 
         mSubscriptions.add(subscriptions);
     }
@@ -213,6 +210,9 @@ public class MainActivity extends Activity implements IMainActivity {
                 .map(fm -> (SelectPlenDialogFragment) fm.findFragmentByTag(SELECT_PLEN_DIALOG))
                 .map(SelectPlenDialogFragment::getAddresses)
                 .ifPresent(this::notifyPlenScanComplete);
+        mFragmentManager
+                .map(fm -> fm.findFragmentByTag(LOCATION_SETTING_DIALOG))
+                .ifPresent(fm -> notifyLocationUnavailable());
         mPresenter.bind(this);
     }
 
@@ -253,7 +253,6 @@ public class MainActivity extends Activity implements IMainActivity {
             mToolbar.inflateMenu(R.menu.menu_joystick);
         } else {
             boolean writable = mPresenter.getPlenConnected() && !mPresenter.getWriting();
-            Log.d(TAG, "updateToolbar " + writable);
             mToolbar.inflateMenu(R.menu.menu_program);
             setIconEnable(
                     mToolbar.getMenu().findItem(R.id.action_write_program), writable);
