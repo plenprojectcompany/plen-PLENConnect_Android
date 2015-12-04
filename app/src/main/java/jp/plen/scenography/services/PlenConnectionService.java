@@ -1,11 +1,9 @@
 package jp.plen.scenography.services;
 
 import android.app.Service;
-import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
-import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
 import android.content.Context;
 import android.content.Intent;
@@ -27,8 +25,9 @@ import java.util.concurrent.TimeUnit;
 import de.greenrobot.event.EventBus;
 import jp.plen.rx.binding.Property;
 import jp.plen.scenography.R;
-import jp.plen.scenography.exceptions.BluetoothUnavailableException;
 import jp.plen.scenography.exceptions.PlenConnectionException;
+import jp.plen.scenography.exceptions.ScenographyException;
+import jp.plen.scenography.utils.BluetoothUtil;
 import jp.plen.scenography.utils.PlenGattConstants;
 import jp.plen.scenography.utils.WatchDogTimer;
 import rx.Observable;
@@ -131,10 +130,10 @@ public class PlenConnectionService extends Service {
 
         mState.set(State.CONNECTING);
         try {
-            mGatt = Optional.ofNullable(getBluetoothAdapter()
+            mGatt = Optional.ofNullable(BluetoothUtil.getBluetoothAdapter(getApplication())
                     .getRemoteDevice(request.mAddress)
                     .connectGatt(getApplication(), false, mBluetoothGattCallback));
-        } catch (BluetoothUnavailableException e) {
+        } catch (ScenographyException e) {
             postErrorEvent(e);
             mState.set(State.DISCONNECTED);
             return;
@@ -218,15 +217,6 @@ public class PlenConnectionService extends Service {
 
     private State getState() {
         return mState.get().get();
-    }
-
-    @NonNull
-    private BluetoothAdapter getBluetoothAdapter() throws BluetoothUnavailableException {
-        return Optional.ofNullable(getApplication().getSystemService(Context.BLUETOOTH_SERVICE))
-                .map(o -> (BluetoothManager) o)
-                .map(BluetoothManager::getAdapter)
-                .filter(BluetoothAdapter::isEnabled)
-                .orElseThrow(BluetoothUnavailableException::new);
     }
 
     public enum State {

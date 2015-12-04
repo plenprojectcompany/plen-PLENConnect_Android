@@ -8,6 +8,8 @@ public interface IPlenConnectionActivity {
 
     void notifyBluetoothUnavailable();
 
+    void notifyLocationUnavailable();
+
     void notifyPlenScanning();
 
     void notifyPlenScanCancel();

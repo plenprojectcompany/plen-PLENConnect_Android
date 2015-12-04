@@ -27,6 +27,8 @@
     <string name="action_ok">OK</string>
     <string name="action_cancel">Cancel</string>
     <string name="action_rescan">Retry</string>
+    <string name="action_deny">Deny</string>
+    <string name="action_allow">Allow</string>
 
     <!-- message -->
     <string name="scanning_plen">Scanning PLEN</string>
@@ -43,6 +45,7 @@
     <string name="select_plen_dialog_title">@string/select_plen</string>
     <string name="plen_not_found_dialog_title">@string/plen_not_found</string>
     <string name="plen_not_found_dialog_message">Reboot the PLEN if you can not connect to it.</string>
+    <string name="location_setting_dialog_message">An app wants to turn Location ON for this device.</string>
 
     <!-- log -->
     <string name="log_ble_disconnected">Disconnected from the GATT server.</string>

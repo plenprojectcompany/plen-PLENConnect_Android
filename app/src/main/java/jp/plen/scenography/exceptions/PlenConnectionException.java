@@ -4,7 +4,7 @@ package jp.plen.scenography.exceptions;
  * PLENとのBluetooth通信関連の例外.
  * Created by kzm4269 on 15/07/20.
  */
-public class PlenConnectionException extends Exception {
+public class PlenConnectionException extends ScenographyException {
     private static final long serialVersionUID = 1284089615806286010L;
 
     public PlenConnectionException() {
