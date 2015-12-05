@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 import de.greenrobot.event.EventBus;
 import jp.plen.scenography.R;
 import jp.plen.scenography.exceptions.BluetoothUnavailableException;
+import jp.plen.scenography.exceptions.LocationUnavailableException;
 import jp.plen.scenography.models.preferences.MainPreferences_;
 import jp.plen.scenography.services.PlenConnectionService;
 import jp.plen.scenography.services.PlenScanService;
@@ -78,9 +79,16 @@ public class PlenConnectionActivityPresenter {
     }
 
     public void onEvent(@NonNull PlenScanService.ErrorEvent event) {
-        if (event.getSource() instanceof BluetoothUnavailableException) {
-            mView.ifPresent(IPlenConnectionActivity::notifyBluetoothUnavailable);
-        }
+        Throwable source = event.getSource();
+        mView.ifPresent(view -> {
+            if (source instanceof BluetoothUnavailableException) {
+                view.notifyBluetoothUnavailable();
+            } else if (source instanceof LocationUnavailableException) {
+                view.notifyLocationUnavailable();
+            } else {
+                view.notifyConnectionError(source);
+            }
+        });
     }
 
     public void onEvent(@NonNull PlenScanService.ScanResultsUpdateEvent event) {

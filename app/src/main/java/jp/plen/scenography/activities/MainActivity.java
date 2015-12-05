@@ -10,6 +10,7 @@ import android.content.ServiceConnection;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -36,13 +37,14 @@ import jp.plen.scenography.R;
 import jp.plen.scenography.Scenography;
 import jp.plen.scenography.fragments.JoystickFragment_;
 import jp.plen.scenography.fragments.ProgrammingFragment_;
+import jp.plen.scenography.fragments.dialog.LocationSettingRequestDialogFragment;
+import jp.plen.scenography.fragments.dialog.LocationSettingRequestDialogFragment_;
 import jp.plen.scenography.fragments.dialog.OpenSourceLicensesDialogFragment;
 import jp.plen.scenography.fragments.dialog.OpenSourceLicensesDialogFragment_;
 import jp.plen.scenography.fragments.dialog.PlenScanningDialogFragment;
 import jp.plen.scenography.fragments.dialog.PlenScanningDialogFragment_;
 import jp.plen.scenography.fragments.dialog.SelectPlenDialogFragment;
 import jp.plen.scenography.fragments.dialog.SelectPlenDialogFragment_;
-import jp.plen.scenography.models.entities.PlenWalk;
 import jp.plen.scenography.models.preferences.MainPreferences_;
 import jp.plen.scenography.services.PlenConnectionService;
 import jp.plen.scenography.services.PlenConnectionService_;
@@ -57,6 +59,7 @@ public class MainActivity extends Activity implements IMainActivity {
     private static final String SCANNING_DIALOG = PlenScanningDialogFragment.class.getSimpleName();
     private static final String SELECT_PLEN_DIALOG = SelectPlenDialogFragment.class.getSimpleName();
     private static final String OSS_LICENSES_DIALOG = OpenSourceLicensesDialogFragment.class.getSimpleName();
+    private static final String LOCATION_SETTING_DIALOG = LocationSettingRequestDialogFragment.class.getSimpleName();
     private final ServiceConnection mPlenConnectionService = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
@@ -87,6 +90,23 @@ public class MainActivity extends Activity implements IMainActivity {
         Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
         int requestCode = 1;
         startActivityForResult(intent, requestCode);
+    }
+
+    @UiThread
+    @Override
+    public void notifyLocationUnavailable() {
+        CompositeSubscription subscriptions = new CompositeSubscription();
+        LocationSettingRequestDialogFragment fragment = LocationSettingRequestDialogFragment_.builder()
+                .build();
+        fragment.allowEvent()
+                .lift(Operators.composite(subscriptions))
+                .subscribe(v -> {
+                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    int requestCode = 1;
+                    startActivityForResult(intent, requestCode);
+                });
+        mFragmentManager.ifPresent(m -> fragment.show(m, LOCATION_SETTING_DIALOG));
+        mSubscriptions.add(subscriptions);
     }
 
     @Override
@@ -190,6 +210,9 @@ public class MainActivity extends Activity implements IMainActivity {
                 .map(fm -> (SelectPlenDialogFragment) fm.findFragmentByTag(SELECT_PLEN_DIALOG))
                 .map(SelectPlenDialogFragment::getAddresses)
                 .ifPresent(this::notifyPlenScanComplete);
+        mFragmentManager
+                .map(fm -> fm.findFragmentByTag(LOCATION_SETTING_DIALOG))
+                .ifPresent(fm -> notifyLocationUnavailable());
         mPresenter.bind(this);
     }
 
@@ -230,7 +253,6 @@ public class MainActivity extends Activity implements IMainActivity {
             mToolbar.inflateMenu(R.menu.menu_joystick);
         } else {
             boolean writable = mPresenter.getPlenConnected() && !mPresenter.getWriting();
-            Log.d(TAG, "updateToolbar " + writable);
             mToolbar.inflateMenu(R.menu.menu_program);
             setIconEnable(
                     mToolbar.getMenu().findItem(R.id.action_write_program), writable);

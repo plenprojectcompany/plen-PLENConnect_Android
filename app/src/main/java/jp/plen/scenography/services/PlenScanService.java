@@ -1,8 +1,6 @@
 package jp.plen.scenography.services;
 
 import android.app.Service;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothManager;
 import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanResult;
 import android.bluetooth.le.ScanSettings;
@@ -15,8 +13,6 @@ import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.util.Log;
 
-import com.eccyan.optional.Optional;
-
 import org.androidannotations.annotations.EService;
 
 import java.util.LinkedList;
@@ -26,8 +22,9 @@ import java.util.concurrent.TimeUnit;
 import de.greenrobot.event.EventBus;
 import jp.plen.rx.binding.Property;
 import jp.plen.scenography.R;
-import jp.plen.scenography.exceptions.BluetoothUnavailableException;
 import jp.plen.scenography.exceptions.PlenConnectionException;
+import jp.plen.scenography.exceptions.ScenographyException;
+import jp.plen.scenography.utils.BluetoothUtil;
 import jp.plen.scenography.utils.PlenGattConstants;
 import jp.plen.scenography.utils.WatchDogTimer;
 import rx.Observable;
@@ -152,10 +149,10 @@ public class PlenScanService extends Service {
 
         mScanResults.clear();
         try {
-            getBluetoothAdapter()
+            BluetoothUtil.getBluetoothAdapter(getApplication())
                     .getBluetoothLeScanner()
                     .startScan(PlenGattConstants.PLEN_FILTERS, settings, mScanCallback);
-        } catch (BluetoothUnavailableException e) {
+        } catch (ScenographyException e) {
             postErrorEvent(e);
             return;
         }
@@ -177,10 +174,10 @@ public class PlenScanService extends Service {
         }
 
         try {
-            getBluetoothAdapter()
+            BluetoothUtil.getBluetoothAdapter(getApplication())
                     .getBluetoothLeScanner()
                     .stopScan(mScanCallback);
-        } catch (BluetoothUnavailableException e) {
+        } catch (ScenographyException e) {
             postErrorEvent(e);
         }
         mState.set(State.STOP);
@@ -201,15 +198,6 @@ public class PlenScanService extends Service {
 
     private State getState() {
         return mState.get().get();
-    }
-
-    @NonNull
-    private BluetoothAdapter getBluetoothAdapter() throws BluetoothUnavailableException {
-        return Optional.ofNullable(getApplication().getSystemService(Context.BLUETOOTH_SERVICE))
-                .map(o -> (BluetoothManager) o)
-                .map(BluetoothManager::getAdapter)
-                .filter(BluetoothAdapter::isEnabled)
-                .orElseThrow(BluetoothUnavailableException::new);
     }
 
     public enum State {
