@@ -3,7 +3,6 @@ package jp.plen.scenography.views;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
@@ -11,8 +10,8 @@ import android.view.DragEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.GridView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import com.eccyan.optional.Optional;
 
@@ -21,13 +20,12 @@ import org.androidannotations.annotations.EView;
 import org.androidannotations.annotations.UiThread;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.concurrent.TimeUnit;
 
 import jp.plen.scenography.R;
 import jp.plen.scenography.models.entities.PlenCodeUnit;
 import jp.plen.scenography.models.entities.PlenMotion;
-import jp.plen.scenography.utils.ListViewUtil;
+import jp.plen.scenography.utils.GridViewUtil;
 import jp.plen.scenography.utils.SerializableUtil;
 import jp.plen.scenography.views.adapters.PlenProgramAdapter;
 import rx.Observable;
@@ -35,7 +33,7 @@ import rx.Subscription;
 import rx.subscriptions.Subscriptions;
 
 @EView
-public class PlenProgramView extends ListView {
+public class PlenProgramView extends GridView {
     private static final String TAG = PlenProgramView.class.getSimpleName();
     private static final String DRAG_DATA_LABEL = TAG + ".DRAG_DATA_LABEL";
     private final Runnable mRemoveBlankRowCallback = () -> getAdapter().removeBlankRow();
@@ -141,7 +139,7 @@ public class PlenProgramView extends ListView {
 
         // 一定時間後にドラッグ開始
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            int position = ListViewUtil.getPositionAt(this, x, y);
+            int position = GridViewUtil.getPositionAt(this, x, y);
             if (position != INVALID_POSITION) {
                 mItemLongClickSubscription.unsubscribe();
                 mItemLongClickSubscription = Observable.just(position)

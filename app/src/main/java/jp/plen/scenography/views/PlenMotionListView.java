@@ -6,8 +6,8 @@ import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import com.eccyan.optional.Optional;
 
@@ -17,14 +17,14 @@ import org.androidannotations.annotations.UiThread;
 import java.util.concurrent.TimeUnit;
 
 import jp.plen.scenography.R;
-import jp.plen.scenography.utils.ListViewUtil;
+import jp.plen.scenography.utils.GridViewUtil;
 import jp.plen.scenography.views.adapters.PlenMotionListAdapter;
 import rx.Observable;
 import rx.Subscription;
 import rx.subscriptions.Subscriptions;
 
 @EView
-public class PlenMotionListView extends ListView {
+public class PlenMotionListView extends GridView {
     private static final String TAG = PlenMotionListView.class.getSimpleName();
     private final Rect mLastHitRect = new Rect();  // 最後にタッチされた子Viewの位置
     @NonNull private Optional<PlenMotionListAdapter> mAdapter = Optional.empty();
@@ -67,7 +67,7 @@ public class PlenMotionListView extends ListView {
 
         // 一定時間後にドラッグ開始
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            int position = ListViewUtil.getPositionAt(this, x, y);
+            int position = GridViewUtil.getPositionAt(this, x, y);
             if (position != INVALID_POSITION) {
                 mItemLongClickSubscription.unsubscribe();
                 mItemLongClickSubscription = Observable.just(position)
