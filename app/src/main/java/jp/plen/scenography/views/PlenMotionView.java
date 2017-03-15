@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -32,7 +32,7 @@ public class PlenMotionView extends RelativeLayout {
     private final CompositeSubscription mSubscriptions = new CompositeSubscription();
     private final Property<PlenMotion> mMotion = Property.create();
     @ViewById(R.id.rowButton) Button mRowButton;
-    @ViewById(R.id.motionIcon) ImageButton mIconView;
+    @ViewById(R.id.motionIcon) ImageView mIconView;
     @ViewById(R.id.motionName) TextView mNameView;
     @ViewById(R.id.motionNumber) TextView mNumberView;
 
@@ -101,7 +101,7 @@ public class PlenMotionView extends RelativeLayout {
                 .into(mIconView);
         mNameView.setText(motion.getName());
         mNumberView.setText(String.format("%02X", motion.getId()));
-        mIconView.setOnLongClickListener(v -> sendMotionPlayCommand(motion));
+        // mIconView.setOnLongClickListener(v -> sendMotionPlayCommand(motion));
         mRowButton.setOnClickListener(v -> sendMotionPlayCommand(motion));
     }
 
