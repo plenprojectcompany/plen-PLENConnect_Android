@@ -40,6 +40,6 @@
             android:layout_weight="1"
             android:text="@string/unknown_motion_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="@dimen/text_size_large"/>
+            android:textSize="@dimen/text_size_small"/>
     </LinearLayout>
 </RelativeLayout>
