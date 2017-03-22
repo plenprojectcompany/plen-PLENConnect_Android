@@ -22,8 +22,8 @@
         <ImageView
             android:id="@+id/motionIcon"
             style="@style/PlenMotionListStyle"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_margin="6dp"
             android:background="@drawable/ripple_effect_motion_icon"
             android:contentDescription="@string/motion_icon_description"
