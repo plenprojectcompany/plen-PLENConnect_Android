@@ -34,7 +34,7 @@ public class PlenMotionView extends RelativeLayout {
     @ViewById(R.id.rowButton) Button mRowButton;
     @ViewById(R.id.motionIcon) ImageView mIconView;
     @ViewById(R.id.motionName) TextView mNameView;
-    @ViewById(R.id.motionNumber) TextView mNumberView;
+    // @ViewById(R.id.motionNumber) TextView mNumberView;
 
     public PlenMotionView(Context context) {
         super(context);
@@ -100,7 +100,7 @@ public class PlenMotionView extends RelativeLayout {
                 .resizeDimen(R.dimen.motion_icon_width, R.dimen.motion_icon_height)
                 .into(mIconView);
         mNameView.setText(motion.getName());
-        mNumberView.setText(String.format("%02X", motion.getId()));
+        // mNumberView.setText(String.format("%02X", motion.getId()));
         // mIconView.setOnLongClickListener(v -> sendMotionPlayCommand(motion));
         mRowButton.setOnClickListener(v -> sendMotionPlayCommand(motion));
     }

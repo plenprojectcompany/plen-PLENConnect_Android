@@ -25,10 +25,10 @@
     <EditText
         android:id="@+id/loopCount"
         style="@style/PlenMotionListStyle"
-        android:layout_width="30pt"
+        android:layout_width="20pt"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/motion_loop_count_hint"
         android:inputType="numberSigned"
