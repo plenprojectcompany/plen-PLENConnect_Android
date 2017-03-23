@@ -26,7 +26,7 @@ public final class PlenCommandUtil {
     public static String toCommand(@NonNull List<PlenCodeUnit> program) {
         StringBuilder builder = new StringBuilder("#RI#RI");
         for (PlenCodeUnit unit : program) {
-            builder.append(String.format("#PU%02X%02X", unit.getMotionId(), unit.getLoopCount()));
+            builder.append(String.format("#PU%02X%02X", unit.getMotionId(), unit.getLoopCount() - 1));
         }
         return builder.append("#PO").toString();
     }
