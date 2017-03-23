@@ -20,19 +20,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_below="@+id/toolbar"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true">
 
-    <ImageButton
-        android:id="@+id/joystickIcon"
-        style="@style/PlenMotionListStyle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="20dp"
-        android:background="@drawable/ripple_effect_joystick_icon"
-        android:contentDescription="@string/motion_icon_description"
-        android:elevation="@dimen/elevation_middle"
-        android:scaleType="fitCenter"
-        android:src="@drawable/joystick_icon"/>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"></LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

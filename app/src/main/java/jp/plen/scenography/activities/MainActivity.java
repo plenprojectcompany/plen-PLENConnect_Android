@@ -2,24 +2,21 @@ package jp.plen.scenography.activities;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.MenuItem;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.eccyan.optional.Optional;
-import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
@@ -28,13 +25,10 @@ import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.sharedpreferences.Pref;
 
-import java.util.Collections;
 import java.util.List;
 
-import de.greenrobot.event.EventBus;
 import jp.plen.rx.utils.Operators;
 import jp.plen.scenography.R;
-import jp.plen.scenography.Scenography;
 import jp.plen.scenography.fragments.JoystickFragment_;
 import jp.plen.scenography.fragments.ProgrammingFragment_;
 import jp.plen.scenography.fragments.dialog.LocationSettingRequestDialogFragment;
@@ -46,10 +40,8 @@ import jp.plen.scenography.fragments.dialog.PlenScanningDialogFragment_;
 import jp.plen.scenography.fragments.dialog.SelectPlenDialogFragment;
 import jp.plen.scenography.fragments.dialog.SelectPlenDialogFragment_;
 import jp.plen.scenography.models.preferences.MainPreferences_;
-import jp.plen.scenography.services.PlenConnectionService;
 import jp.plen.scenography.services.PlenConnectionService_;
 import jp.plen.scenography.services.PlenScanService_;
-import jp.plen.scenography.utils.PlenCommandUtil;
 import rx.Subscription;
 import rx.subscriptions.CompositeSubscription;
 
@@ -80,7 +72,6 @@ public class MainActivity extends Activity implements IMainActivity {
     };
     private final CompositeSubscription mSubscriptions = new CompositeSubscription();
     @ViewById(R.id.toolbar) Toolbar mToolbar;
-    @ViewById(R.id.joystickIcon) ImageButton mJoystickIcon;
     @Bean PlenConnectionActivityPresenter mPresenter;
     @Pref MainPreferences_ mPref;
     @NonNull private Optional<FragmentManager> mFragmentManager = Optional.empty();
@@ -174,6 +165,7 @@ public class MainActivity extends Activity implements IMainActivity {
             } else {
                 Toast.makeText(this, R.string.plen_disconnected, Toast.LENGTH_SHORT).show();
             }
+            updateFragment();
         }
         updateToolbar();
     }
@@ -206,6 +198,7 @@ public class MainActivity extends Activity implements IMainActivity {
         Log.d(TAG, "onResume ");
         mFragmentManager = Optional.ofNullable(getFragmentManager());
         dismissDialogFragment(SCANNING_DIALOG);
+        dismissDialogFragment(SCANNING_DIALOG);
         mFragmentManager
                 .map(fm -> (SelectPlenDialogFragment) fm.findFragmentByTag(SELECT_PLEN_DIALOG))
                 .map(SelectPlenDialogFragment::getAddresses)
@@ -235,11 +228,6 @@ public class MainActivity extends Activity implements IMainActivity {
 
     @AfterViews
     void afterViews() {
-        mJoystickIcon.setOnClickListener(v -> {
-            mPref.edit().joystickVisibility().put(!mPref.joystickVisibility().get()).apply();
-            updateToolbar();
-            updateFragment();
-        });
         updateToolbar();
         updateFragment();
     }
@@ -249,30 +237,25 @@ public class MainActivity extends Activity implements IMainActivity {
         mToolbar.setTitle(R.string.app_name);
 
         mToolbar.getMenu().clear();
+
         if (mPref.joystickVisibility().get()) {
             mToolbar.inflateMenu(R.menu.menu_joystick);
         } else {
-            boolean writable = mPresenter.getPlenConnected() && !mPresenter.getWriting();
             mToolbar.inflateMenu(R.menu.menu_program);
-            setIconEnable(
-                    mToolbar.getMenu().findItem(R.id.action_write_program), writable);
         }
 
         mToolbar.setOnMenuItemClickListener(item -> {
             int id = item.getItemId();
-            if (id == R.id.action_delete_program) {
-                Scenography.getModel().currentProgram().sequence().set(Collections.emptyList());
-            } else if (id == R.id.action_search_plen) {
+            if (id == R.id.action_search_plen) {
                 mPresenter.disconnectPlen();
                 mPresenter.startScan();
-            } else if (id == R.id.action_write_program) {
-                Scenography.getModel().currentProgram().sequence().get()
-                        .map(PlenCommandUtil::toCommand)
-                        .ifPresent(program -> EventBus.getDefault()
-                                .post(new PlenConnectionService.WriteRequest(program)));
             } else if (id == R.id.action_licenses) {
                 mFragmentManager.ifPresent(m -> OpenSourceLicensesDialogFragment_.builder().build()
                         .show(m, OSS_LICENSES_DIALOG));
+            } else {
+                mPref.edit().joystickVisibility().put(!mPref.joystickVisibility().get()).apply();
+                updateToolbar();
+                updateFragment();
             }
             return true;
         });
@@ -281,16 +264,21 @@ public class MainActivity extends Activity implements IMainActivity {
     @UiThread
     void updateFragment() {
         if (mPref.joystickVisibility().get()) {
-            Picasso.with(this).load(R.drawable.programming_icon).into(mJoystickIcon);
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.container, JoystickFragment_.builder().build())
                     .commit();
         } else {
-            Picasso.with(this).load(R.drawable.joystick_icon).into(mJoystickIcon);
+            Bundle args = new Bundle();
+            boolean writable = mPresenter.getPlenConnected() && !mPresenter.getWriting();
+            args.putBoolean("WRITABLE", writable);
+
+            Fragment programmingFragment = ProgrammingFragment_.builder().build();
+            programmingFragment.setArguments(args);
+
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.container, ProgrammingFragment_.builder().build())
+                    .replace(R.id.container, programmingFragment)
                     .commit();
         }
     }
@@ -302,14 +290,5 @@ public class MainActivity extends Activity implements IMainActivity {
                 .map(f -> (DialogFragment) f)
                 .filter(DialogFragment::getShowsDialog)
                 .ifPresent(f -> f.onDismiss(f.getDialog()));
-    }
-
-    @UiThread
-    void setIconEnable(MenuItem item, boolean enable) {
-        item.setEnabled(enable);
-        Drawable icon = item.getIcon();
-        if (icon != null) {
-            icon.setAlpha(enable ? 255 : 64);
-        }
-    }
+ }
 }
