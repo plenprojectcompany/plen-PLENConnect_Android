@@ -7,7 +7,6 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
@@ -137,25 +136,21 @@ public class PlenCodeUnitView extends LinearLayout {
             }
         });
 
-        mLoopCountView.setOnKeyListener(new OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                Log.d(TAG, "oKey:" + event);
+        mLoopCountView.setOnKeyListener((v, keyCode, event) -> {
+            Log.d(TAG, "oKey:" + event);
 
-                if(keyCode == KeyEvent.KEYCODE_ENTER){
-                    String input = mLoopCountView.getText().toString();
-                    if (input.isEmpty()) {
-                        input = String.valueOf(getContext().getResources().getInteger(R.integer.motion_loop_default));
-                        mLoopCountView.setText(input);
-                    }
-                    int loopCount = Integer.parseInt(input);
-                    if (mLoopCount.get().filter(i -> i != loopCount).isPresent()) {
-                        mLoopCount.set(loopCount);
-                    }
-                    // clearFocus();
+            if(keyCode == KeyEvent.KEYCODE_ENTER){
+                String input = mLoopCountView.getText().toString();
+                if (input.isEmpty()) {
+                    input = String.valueOf(getContext().getResources().getInteger(R.integer.motion_loop_default));
+                    mLoopCountView.setText(input);
                 }
-                return false;
+                int loopCount = Integer.parseInt(input);
+                if (mLoopCount.get().filter(i -> i != loopCount).isPresent()) {
+                    mLoopCount.set(loopCount);
+                }
             }
+            return false;
         });
     }
 
