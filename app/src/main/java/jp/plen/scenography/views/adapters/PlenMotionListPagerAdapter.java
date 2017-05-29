@@ -75,7 +75,7 @@ public class PlenMotionListPagerAdapter extends PagerAdapter implements Subscrip
                 adapter,
                 adapter.bind(Observable.just(mItems.get(position).getMotions()))));
 
-        view.setNumColumns(2);
+        view.setNumColumns(3);
         container.addView(view);
         return view;
     }
