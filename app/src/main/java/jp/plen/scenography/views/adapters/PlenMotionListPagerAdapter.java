@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 import jp.plen.rx.subscriptions.SubscriptionMap;
 import jp.plen.scenography.R;
 import jp.plen.scenography.models.entities.PlenMotionCategory;
+import jp.plen.scenography.models.preferences.MainPreferences_;
 import jp.plen.scenography.views.PlenMotionListView;
 import rx.Observable;
 import rx.Subscription;
@@ -31,6 +33,7 @@ public class PlenMotionListPagerAdapter extends PagerAdapter implements Subscrip
     private final CompositeSubscription mSubscriptions = new CompositeSubscription();
     private final SubscriptionMap<Object> mSubscriptionMap = new SubscriptionMap<>();
     @NonNull private final LayoutInflater mLayoutInflater;
+    @Pref MainPreferences_ mPref;
     @RootContext Context mContext;
     private boolean mDraggable;
 
@@ -75,7 +78,12 @@ public class PlenMotionListPagerAdapter extends PagerAdapter implements Subscrip
                 adapter,
                 adapter.bind(Observable.just(mItems.get(position).getMotions()))));
 
-        view.setNumColumns(3);
+
+        if(mPref.joystickVisibility().get()) {
+            view.setNumColumns(mContext.getResources().getInteger(R.integer.number_column_joystick));
+        } else {
+            view.setNumColumns(mContext.getResources().getInteger(R.integer.number_column_programming));
+        }
         container.addView(view);
         return view;
     }

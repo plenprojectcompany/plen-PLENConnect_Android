@@ -10,4 +10,6 @@
     <integer name="plen_connection_service_stop_delay_sec">3</integer>
     <integer name="plen_scan_timeout_sec">1</integer>
     <integer name="walk_command_repeat_interval_msec">500</integer>
+    <integer name="number_column_joystick">3</integer>
+    <integer name="number_column_programming">2</integer>
 </resources>
