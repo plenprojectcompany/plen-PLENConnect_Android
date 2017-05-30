@@ -1,11 +1,16 @@
 package jp.plen.scenography.views.adapters;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.Point;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 
 import org.androidannotations.annotations.AfterInject;
@@ -71,10 +76,30 @@ public class PlenMotionListAdapter extends BaseAdapter implements Subscription {
         if (convertView == null) {
             if(mPref.joystickVisibility().get()) {
                 convertView = mLayoutInflater.inflate(R.layout.item_plen_motion_joystick_list, parent, false);
+
+                WindowManager wm = (WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE);
+                ViewGroup.LayoutParams prm;
+
+                Display disp = wm.getDefaultDisplay();
+                prm = convertView.getLayoutParams();
+
+                Point size = new Point();
+                disp.getSize(size);
+
+                final TypedArray styledAttributes = mContext.getTheme().obtainStyledAttributes(new int[]{android.R.attr.actionBarSize});
+                int actionBarSize = (int) styledAttributes.getDimension(0, 0);
+
+                prm.height = (size.y - actionBarSize*2)/3;
+
+                Log.d(TAG, "getView: size.y: " + size.y + " actionBarSizeDp: " + actionBarSize);
+
+                convertView.setLayoutParams(prm);
             } else {
                 convertView = mLayoutInflater.inflate(R.layout.item_plen_motion_list, parent, false);
             }
         }
+
+
         if(mPref.joystickVisibility().get()) {
             bindView(position, (PlenJoystickMotionView) convertView);
         } else {
