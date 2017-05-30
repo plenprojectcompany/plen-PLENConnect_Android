@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ import jp.plen.rx.binding.Property;
 import jp.plen.rx.subscriptions.SubscriptionMap;
 import jp.plen.scenography.R;
 import jp.plen.scenography.models.entities.PlenMotion;
+import jp.plen.scenography.models.preferences.MainPreferences_;
+import jp.plen.scenography.views.PlenJoystickMotionView;
 import jp.plen.scenography.views.PlenMotionView;
 import rx.Observable;
 import rx.Subscription;
@@ -34,6 +37,7 @@ public class PlenMotionListAdapter extends BaseAdapter implements Subscription {
     private final SubscriptionMap<Object> mSubscriptionMap = new SubscriptionMap<>();
     private final Property<Set<PlenMotion>> mMotions = Property.create();
     @NonNull private final LayoutInflater mLayoutInflater;
+    @Pref MainPreferences_ mPref;
     @RootContext Context mContext;
     private boolean mDraggable;
 
@@ -65,9 +69,17 @@ public class PlenMotionListAdapter extends BaseAdapter implements Subscription {
     @Override
     public View getView(int position, @Nullable View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = mLayoutInflater.inflate(R.layout.item_plen_motion_list, parent, false);
+            if(mPref.joystickVisibility().get()) {
+                convertView = mLayoutInflater.inflate(R.layout.item_plen_motion_joystick_list, parent, false);
+            } else {
+                convertView = mLayoutInflater.inflate(R.layout.item_plen_motion_list, parent, false);
+            }
         }
-        bindView(position, (PlenMotionView) convertView);
+        if(mPref.joystickVisibility().get()) {
+            bindView(position, (PlenJoystickMotionView) convertView);
+        } else {
+            bindView(position, (PlenMotionView) convertView);
+        }
         return convertView;
     }
 
@@ -94,6 +106,13 @@ public class PlenMotionListAdapter extends BaseAdapter implements Subscription {
     }
 
     private void bindView(int position, @NonNull PlenMotionView view) {
+        Subscription subscription = view.bind(Observable.just(getItem(position)));
+        view.setRowButtonVisibility(mDraggable ? View.INVISIBLE : View.VISIBLE);
+        mSubscriptionMap.put(view, subscription);
+        mSubscriptionMap.put(position, subscription);
+    }
+
+    private void bindView(int position, @NonNull PlenJoystickMotionView view) {
         Subscription subscription = view.bind(Observable.just(getItem(position)));
         view.setRowButtonVisibility(mDraggable ? View.INVISIBLE : View.VISIBLE);
         mSubscriptionMap.put(view, subscription);
