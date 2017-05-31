@@ -189,6 +189,9 @@ public class MainActivity extends Activity implements IMainActivity {
         Log.d(TAG, "onCreate ");
         mSubscriptions.clear();
 
+        Intent intent = getIntent();
+        mPref.edit().joystickVisibility().put(intent.getBooleanExtra("joystick", true)).apply();
+
         // 通信用Service起動
         bindService(new Intent(this, PlenConnectionService_.class), mPlenConnectionService, BIND_AUTO_CREATE);
         bindService(new Intent(this, PlenScanService_.class), mPlenScanService, BIND_AUTO_CREATE);
