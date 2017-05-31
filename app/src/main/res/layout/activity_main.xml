@@ -12,7 +12,17 @@
         android:background="?attr/colorPrimary"
         android:elevation="@dimen/elevation_low"
         android:theme="@style/OptionMenuTheme"
-        app:popupTheme="@style/OptionMenuPopupTheme"/>
+        app:popupTheme="@style/OptionMenuPopupTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toolbar Title"
+                android:textSize="@dimen/text_size_medium"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
+    </android.support.v7.widget.Toolbar>
+
 
     <LinearLayout
         android:id="@+id/container"

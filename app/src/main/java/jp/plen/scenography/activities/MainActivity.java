@@ -14,6 +14,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eccyan.optional.Optional;
@@ -72,6 +73,7 @@ public class MainActivity extends Activity implements IMainActivity {
     };
     private final CompositeSubscription mSubscriptions = new CompositeSubscription();
     @ViewById(R.id.toolbar) Toolbar mToolbar;
+    @ViewById(R.id.toolbar_title) TextView mTitle;
     @Bean PlenConnectionActivityPresenter mPresenter;
     @Pref MainPreferences_ mPref;
     @NonNull private Optional<FragmentManager> mFragmentManager = Optional.empty();
@@ -234,14 +236,16 @@ public class MainActivity extends Activity implements IMainActivity {
 
     @UiThread
     void updateToolbar() {
-        mToolbar.setTitle(R.string.app_name);
+        // mToolbar.setTitle(R.string.app_name);
 
         mToolbar.getMenu().clear();
 
         if (mPref.joystickVisibility().get()) {
             mToolbar.inflateMenu(R.menu.menu_joystick);
+            mTitle.setText("Controller");
         } else {
             mToolbar.inflateMenu(R.menu.menu_program);
+            mTitle.setText("Programming");
         }
 
         mToolbar.setOnMenuItemClickListener(item -> {
