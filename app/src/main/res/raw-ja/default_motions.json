@@ -144,17 +144,17 @@
     "motions": [
       {
         "id": 20,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_lstep.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_rstep.png",
         "name": "左ステップ"
       },
       {
         "id": 21,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_long_dribble.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_5dash.png",
         "name": "前ステップ"
       },
       {
         "id": 22,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_rstep.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_lstep.png",
         "name": "右ステップ"
       },
       {
@@ -164,7 +164,7 @@
       },
       {
         "id": 24,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_5dash.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_long_dribble.png",
         "name": "ダッシュ"
       },
       {
@@ -174,7 +174,7 @@
       },
       {
         "id": 26,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_l_pass.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccor_pass_to_left.png",
         "name": "左パス"
       },
       {
@@ -184,7 +184,7 @@
       },
       {
         "id": 28,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_r_pass.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccor_pass_to_right.png",
         "name": "右パス"
       }
     ]
@@ -194,7 +194,7 @@
     "motions": [
       {
         "id": 30,
-        "icon": "file:///android_asset/img/motion/dance/p_dance_rhythm_lstep.png",
+        "icon": "file:///android_asset/img/motion/dance/p_dance_rhythm_rstep.png",
         "name": "ダンス左ステップ"
       },
       {
@@ -204,7 +204,7 @@
       },
       {
         "id": 32,
-        "icon": "file:///android_asset/img/motion/dance/p_dance_rhythm_rstep.png",
+        "icon": "file:///android_asset/img/motion/dance/p_dance_rhythm_lstep.png",
         "name": "ダンス右ステップ"
       },
       {
