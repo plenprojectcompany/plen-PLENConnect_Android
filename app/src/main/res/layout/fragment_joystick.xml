@@ -19,7 +19,7 @@
             android:elevation="@dimen/elevation_low"
             android:gravity="bottom|center"
             android:paddingBottom="14dp"
-            android:text="@string/joystick_title"
+            android:text="@string/joystick_part"
             android:textSize="@dimen/text_size_small"
             android:theme="@style/OptionMenuTheme"/>
 

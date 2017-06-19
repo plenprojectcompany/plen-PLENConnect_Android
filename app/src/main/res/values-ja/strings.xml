@@ -4,9 +4,13 @@
     <string name="app_name">Scenography</string>
     <string name="action_settings">Settings</string>
 
-    <!-- motion -->
-    <string name="program_title">プログラム</string>
+    <!-- title -->
+    <string name="program_title">プログラミング</string>
     <string name="joystick_title">コントローラー</string>
+
+    <!-- motion -->
+    <string name="joystick_part">スティック</string>
+    <string name="programming_part">プログラム</string>
     <string name="no_icon_path">file:///android_asset/img/motion/no_icon.png</string>
     <string name="motion_loop_count_hint">1</string>
     <string name="motion_icon_description">icon</string>
@@ -44,7 +48,7 @@
     <string name="scanning_dialog_message">@string/please_wait</string>
     <string name="select_plen_dialog_title">@string/select_plen</string>
     <string name="plen_not_found_dialog_title">@string/plen_not_found</string>
-    <string name="plen_not_found_dialog_message">PLENをさい起動してください</string>
+    <string name="plen_not_found_dialog_message">PLENを再起動(さいきどう)してください</string>
     <string name="location_setting_dialog_message">いちじょうほうサービスをオンにしてください</string>
 
     <!-- log -->

@@ -4,9 +4,13 @@
     <string name="app_name">Scenography</string>
     <string name="action_settings">Settings</string>
 
+    <!-- title -->
+    <string name="program_title">Programming</string>
+    <string name="joystick_title">Controller</string>
+
     <!-- motion -->
-    <string name="program_title">PROGRAM</string>
-    <string name="joystick_title">JOYSTICK</string>
+    <string name="joystick_part">JOYSTICK</string>
+    <string name="programming_part">PROGRAM</string>
     <string name="no_icon_path">file:///android_asset/img/motion/no_icon.png</string>
     <string name="motion_loop_count_hint">1</string>
     <string name="motion_icon_description">icon</string>

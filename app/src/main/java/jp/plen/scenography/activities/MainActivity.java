@@ -245,10 +245,10 @@ public class MainActivity extends Activity implements IMainActivity {
 
         if (mPref.joystickVisibility().get()) {
             mToolbar.inflateMenu(R.menu.menu_joystick);
-            mTitle.setText("Controller");
+            mTitle.setText(getResources().getString(R.string.joystick_title));
         } else {
             mToolbar.inflateMenu(R.menu.menu_program);
-            mTitle.setText("Programming");
+            mTitle.setText(getResources().getString(R.string.program_title));
         }
 
         mToolbar.setOnMenuItemClickListener(item -> {
