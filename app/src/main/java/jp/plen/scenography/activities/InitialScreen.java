@@ -39,5 +39,7 @@ public class InitialScreen extends AppCompatActivity {
             intent.putExtra("joystick",false);
             startActivity(intent);
         });
+
+
     }
 }

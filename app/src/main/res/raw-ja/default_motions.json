@@ -1,6 +1,6 @@
 [
   {
-    "name": "NORMAL",
+    "name": "ノーマル",
     "motions": [
       {
         "id": 0,
@@ -70,7 +70,7 @@
     ]
   },
   {
-    "name": "BOX",
+    "name": "箱",
     "motions": [
       {
         "id": 10,
@@ -140,7 +140,7 @@
     ]
   },
   {
-    "name": "SOCCER",
+    "name": "サッカー",
     "motions": [
       {
         "id": 20,
@@ -190,7 +190,7 @@
     ]
   },
   {
-    "name": "DANCE",
+    "name": "ダンス",
     "motions": [
       {
         "id": 30,
@@ -240,7 +240,7 @@
     ]
   },
   {
-    "name": "ROLLER SKATING",
+    "name": "ローラースケート",
     "motions": [
       {
         "id": 40,
