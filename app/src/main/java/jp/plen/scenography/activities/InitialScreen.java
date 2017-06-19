@@ -14,7 +14,7 @@ import jp.plen.scenography.R;
 import jp.plen.scenography.models.preferences.MainPreferences_;
 
 
-@EActivity(R.layout.activity_initial_screen)
+@EActivity(R.layout.activity_initial_screen_white)
 public class InitialScreen extends AppCompatActivity {
 
     @ViewById(R.id.ButtonToController) ImageButton toController;
