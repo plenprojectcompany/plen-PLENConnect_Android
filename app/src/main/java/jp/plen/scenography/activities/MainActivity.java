@@ -259,10 +259,6 @@ public class MainActivity extends Activity implements IMainActivity {
             } else if (id == R.id.action_licenses) {
                 mFragmentManager.ifPresent(m -> OpenSourceLicensesDialogFragment_.builder().build()
                         .show(m, OSS_LICENSES_DIALOG));
-            } else {
-                mPref.edit().joystickVisibility().put(!mPref.joystickVisibility().get()).apply();
-                updateToolbar();
-                updateFragment();
             }
             return true;
         });

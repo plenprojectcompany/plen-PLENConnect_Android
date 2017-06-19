@@ -3,13 +3,6 @@
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
     <item
-        android:id="@+id/action_change_mode_programming"
-        android:icon="@drawable/programming_icon"
-        android:orderInCategory="100"
-        android:title="Change Mode"
-        app:showAsAction="ifRoom"
-        />
-    <item
         android:id="@+id/action_search_plen"
         android:icon="@drawable/search_plen3"
         android:orderInCategory="100"
