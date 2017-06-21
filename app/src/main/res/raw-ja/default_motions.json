@@ -119,22 +119,22 @@
       },
       {
         "id": 74,
-        "icon": "file:///android_asset/img/motion/box/p_box_maeippo.png",
+        "icon": "file:///android_asset/img/motion/box/p_box_walk_forward.png",
         "name": "前へ運ぶ"
       },
       {
         "id": 75,
-        "icon": "file:///android_asset/img/motion/box/p_box_clockwiseturning.png",
+        "icon": "file:///android_asset/img/motion/box/p_box_turn_left.png",
         "name": "左ターン"
       },
       {
         "id": 76,
-        "icon": "file:///android_asset/img/motion/box/p_box_clockwise.png",
+        "icon": "file:///android_asset/img/motion/box/p_box_turn_right.png",
         "name": "右ターン"
       },
       {
         "id": 77,
-        "icon": "file:///android_asset/img/motion/box/p_box_back.png",
+        "icon": "file:///android_asset/img/motion/box/p_box_walk_back.png",
         "name": "後ろへ運ぶ"
       }
     ]
@@ -144,7 +144,7 @@
     "motions": [
       {
         "id": 20,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_rstep.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_lstep.png",
         "name": "左ステップ"
       },
       {
@@ -154,7 +154,7 @@
       },
       {
         "id": 22,
-        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_lstep.png",
+        "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_rstep.png",
         "name": "右ステップ"
       },
       {
@@ -289,22 +289,22 @@
       },
       {
         "id": 78,
-        "icon": "file:///android_asset/img/motion/no_image.png",
+        "icon": "file:///android_asset/img/motion/roller_skating/p_skate_skate_forward.png",
         "name": "前へすべる"
       },
       {
         "id": 79,
-        "icon": "file:///android_asset/img/motion/no_image.png",
+        "icon": "file:///android_asset/img/motion/roller_skating/p_skate_turn_left_while_skating.png",
         "name": "左ターン"
       },
       {
         "id": 80,
-        "icon": "file:///android_asset/img/motion/no_image.png",
+        "icon": "file:///android_asset/img/motion/roller_skating/p_skate_turn_right_while_skating.png",
         "name": "右ターン"
       },
       {
         "id": 81,
-        "icon": "file:///android_asset/img/motion/no_image.png",
+        "icon": "file:///android_asset/img/motion/roller_skating/p_skate_skate_back.png",
         "name": "後ろへすべる"
       }
     ]
