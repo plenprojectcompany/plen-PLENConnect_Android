@@ -55,7 +55,7 @@
       {
         "id": 71,
         "icon": "file:///android_asset/img/motion/normal/p_normal_lturn.png",
-        "name": "Left Turn"
+        "name": "Turn Left"
       },
       {
         "id": 72,
@@ -155,7 +155,7 @@
       {
         "id": 22,
         "icon": "file:///android_asset/img/motion/soccer/p_soccer_defense_rstep.png",
-        "name": "Defense RStep"
+        "name": "Right Step while Defensing"
       },
       {
         "id": 23,
