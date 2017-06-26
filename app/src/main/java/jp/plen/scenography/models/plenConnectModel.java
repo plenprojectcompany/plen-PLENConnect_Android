@@ -14,12 +14,12 @@ import jp.plen.scenography.exceptions.ScenographyRuntimeException;
 import jp.plen.scenography.utils.JsonUtil;
 import rx.functions.Actions;
 
-public class ScenographyModel {
-    private static final String TAG = ScenographyModel.class.getSimpleName();
+public class plenConnectModel {
+    private static final String TAG = plenConnectModel.class.getSimpleName();
     @NonNull private final Context mContext;
     @NonNull private final PlenProgramModel mCurrentProgram;
 
-    protected ScenographyModel(@NonNull Context context) {
+    protected plenConnectModel(@NonNull Context context) {
         mContext = context;
         try {
             setupSampleProgram();
@@ -32,8 +32,8 @@ public class ScenographyModel {
     }
 
     @NonNull
-    public static ScenographyModel create(@NonNull Context context) {
-        return new ScenographyModel(context);
+    public static plenConnectModel create(@NonNull Context context) {
+        return new plenConnectModel(context);
     }
 
     @NonNull

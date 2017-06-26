@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/ButtonToProgramming"
                 android:adjustViewBounds="true"
-                android:src="@drawable/scenography_gr"
+                android:src="@drawable/top_connect_g"
                 android:scaleType="fitCenter"
                 android:background="@color/plen_white" />
 

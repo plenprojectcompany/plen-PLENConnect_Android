@@ -19,7 +19,7 @@ import java.util.Collections;
 import de.greenrobot.event.EventBus;
 import jp.plen.rx.binding.Property;
 import jp.plen.scenography.R;
-import jp.plen.scenography.Scenography;
+import jp.plen.scenography.plenConnect;
 import jp.plen.scenography.models.PlenProgramModel;
 import jp.plen.scenography.services.PlenConnectionService;
 import jp.plen.scenography.utils.PlenCommandUtil;
@@ -97,13 +97,13 @@ public class ProgrammingFragment extends Fragment implements IProgramFragment {
         mProgramView.setAdapter(mPlenProgramAdapter);
 
         mPlayIcon.setOnClickListener(v ->
-                Scenography.getModel().currentProgram().sequence().get()
+                plenConnect.getModel().currentProgram().sequence().get()
                         .map(PlenCommandUtil::toCommand)
                         .ifPresent(program -> EventBus.getDefault()
                                 .post(new PlenConnectionService.WriteRequest(program))));
 
         mDeleteIcon.setOnClickListener(v ->
-                        Scenography.getModel().currentProgram().sequence().set(Collections.emptyList())
+                        plenConnect.getModel().currentProgram().sequence().set(Collections.emptyList())
         );
 
         Bundle args = getArguments();

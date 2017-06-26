@@ -24,7 +24,7 @@
             style="@style/PlenMotionListStyle"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_margin="6dp"
+            android:layout_margin="3dp"
             android:background="@drawable/ripple_effect_motion_icon"
             android:contentDescription="@string/motion_icon_description"
             android:elevation="@dimen/elevation_low"
@@ -40,6 +40,7 @@
             android:layout_weight="1"
             android:text="@string/unknown_motion_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="@dimen/text_size_xsmall"/>
+            android:textSize="@dimen/text_size_xsmall"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 </RelativeLayout>

@@ -6,22 +6,22 @@ import android.support.annotation.NonNull;
 import org.androidannotations.annotations.AfterInject;
 import org.androidannotations.annotations.EApplication;
 
-import jp.plen.scenography.models.ScenographyModel;
+import jp.plen.scenography.models.plenConnectModel;
 
 @EApplication
-public class Scenography extends Application {
-    private static final String TAG = Scenography.class.getSimpleName();
-    private static Scenography sInstance;
+public class plenConnect extends Application {
+    private static final String TAG = plenConnect.class.getSimpleName();
+    private static plenConnect sInstance;
 
-    private ScenographyModel mModel;
+    private plenConnectModel mModel;
 
-    public Scenography() {
+    public plenConnect() {
         sInstance = this;
     }
 
     @AfterInject
     void afterInject() {
-        mModel = ScenographyModel.create(this);
+        mModel = plenConnectModel.create(this);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Scenography extends Application {
     }
 
     @NonNull
-    public static ScenographyModel getModel() {
+    public static plenConnectModel getModel() {
         if (sInstance == null) throw new AssertionError();
         if (sInstance.mModel == null) throw new AssertionError();
         return sInstance.mModel;

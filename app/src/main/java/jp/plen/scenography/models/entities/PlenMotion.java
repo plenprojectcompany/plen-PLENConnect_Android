@@ -5,9 +5,6 @@ import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Objects;
 
-import jp.plen.scenography.R;
-import jp.plen.scenography.Scenography;
-
 /**
  * PLENの個々のモーションのデータ.
  * モーション番号(ID)で自然順序付けされる.

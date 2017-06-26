@@ -10,7 +10,7 @@ import org.androidannotations.annotations.EBean;
 import org.androidannotations.annotations.RootContext;
 
 import de.greenrobot.event.EventBus;
-import jp.plen.scenography.Scenography;
+import jp.plen.scenography.plenConnect;
 import jp.plen.scenography.models.PlenProgramModel;
 import jp.plen.scenography.models.entities.PlenWalk;
 import jp.plen.scenography.services.PlenConnectionService;
@@ -31,7 +31,7 @@ public class JoystickFragmentPresenter {
     public void bind(@NonNull IJoystickFragment view) {
         Log.d(TAG, "bind ");
         mView = Optional.of(view);
-        mCurrentProgram = Optional.of(Scenography.getModel().currentProgram());
+        mCurrentProgram = Optional.of(plenConnect.getModel().currentProgram());
 
         EventBus.getDefault().register(this);
 
