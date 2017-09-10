@@ -1,7 +1,6 @@
 package jp.plen.scenography.utils;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -140,6 +139,7 @@ public final class JsonUtil {
         public static final TypeReference<List<PlenMotionCategory_>> LIST =
                 new TypeReference<List<PlenMotionCategory_>>() {
                 };
+        public String mode;
         public String name;
         public List<PlenMotion_> motions;
 
@@ -147,6 +147,7 @@ public final class JsonUtil {
         }
 
         public PlenMotionCategory_(@NonNull PlenMotionCategory category) {
+            this.mode = category.getMode();
             this.name = category.getName();
             this.motions = Observable.from(category.getMotions())
                     .map(PlenMotion_::new)
@@ -157,6 +158,7 @@ public final class JsonUtil {
         @NonNull
         public PlenMotionCategory build() {
             return new PlenMotionCategory(
+                    mode,
                     name,
                     Observable.from(motions)
                             .map(PlenMotion_::build)

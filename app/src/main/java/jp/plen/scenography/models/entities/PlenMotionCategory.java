@@ -14,16 +14,18 @@ import rx.Observable;
 
 public class PlenMotionCategory {
     @NonNull private final String name;
+    @NonNull private final String mode;
     @NonNull private final Set<PlenMotion> motions;
 
-    public PlenMotionCategory(@NonNull String name, @NonNull Collection<PlenMotion> motions) {
+    public PlenMotionCategory(@NonNull String mode, @NonNull String name, @NonNull Collection<PlenMotion> motions) {
+        this.mode = mode;
         this.name = name;
         this.motions = Collections.unmodifiableSet(new HashSet<>(motions));
     }
 
     @NonNull
     public static PlenMotionCategory empty() {
-        return new PlenMotionCategory("", new ArrayList<>());
+        return new PlenMotionCategory("", "", new ArrayList<>());
     }
 
     public static Set<PlenMotion> toMotions(@NonNull Iterable<PlenMotionCategory> categories) {
@@ -38,6 +40,11 @@ public class PlenMotionCategory {
 
     public static Set<PlenMotion> toMotions(@NonNull PlenMotionCategory... categories) {
         return toMotions(Arrays.asList(categories));
+    }
+
+    @NonNull
+    public String getMode() {
+        return mode;
     }
 
     @NonNull

@@ -69,6 +69,7 @@ public class JoystickFragment extends Fragment implements IJoystickFragment {
     @NonNull
     private PlenMotionCategory categoryFilter(@NonNull PlenMotionCategory category) {
         return new PlenMotionCategory(
+                category.getMode(),
                 category.getName(),
                 Observable.from(category.getMotions())
                         .filter(motion -> !(70 <= motion.getId() && motion.getId() <= 81))
@@ -99,8 +100,8 @@ public class JoystickFragment extends Fragment implements IJoystickFragment {
                 .filter(p -> p.gain > gain_min)
                 .map(p -> p.direction)
                 .doOnNext(dir -> {
-                    String modeName = mPlenMotionListPagerAdapter
-                            .getPageTitle(mMotionListViewPager.getCurrentItem());
+                    //String modeName = mPlenMotionListPagerAdapter.getPageTitle(mMotionListViewPager.getCurrentItem());
+                    String modeName = mPlenMotionListPagerAdapter.getMode(mMotionListViewPager.getCurrentItem());
                     PlenWalk.Mode mode = PlenWalk.Mode.NORMAL;
                     switch (modeName) {
                         case "BOX":

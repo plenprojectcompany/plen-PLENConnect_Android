@@ -89,6 +89,8 @@ public class JoystickFragmentPresenter {
         if (mLastWalk.map(w -> !w.equals(walk)).orElse(false)) {
             stopPlen();
         }
+        Log.d(TAG, "movePlen mode : " + mode + " direction : " + dir);
+
         mLastWalk = Optional.of(walk);
 
         mWritable = false;

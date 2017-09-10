@@ -1,5 +1,6 @@
 [
   {
+    "mode": "NORMAL",
     "name": "NORMAL",
     "motions": [
       {
@@ -70,6 +71,7 @@
     ]
   },
   {
+    "mode": "BOX",
     "name": "BOX",
     "motions": [
       {
@@ -140,6 +142,7 @@
     ]
   },
   {
+    "mode": "SOCCER",
     "name": "SOCCER",
     "motions": [
       {
@@ -210,6 +213,7 @@
     ]
   },
   {
+    "mode": "DANCE",
     "name": "DANCE",
     "motions": [
       {
@@ -280,6 +284,7 @@
     ]
   },
   {
+    "mode": "ROLLER SKATING",
     "name": "ROLLER SKATING",
     "motions": [
       {

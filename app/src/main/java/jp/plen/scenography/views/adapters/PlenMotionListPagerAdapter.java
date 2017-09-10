@@ -124,4 +124,9 @@ public class PlenMotionListPagerAdapter extends PagerAdapter implements Subscrip
         mSubscriptionMap.clear();
         mSubscriptions.add(mSubscriptionMap);
     }
+
+    @NonNull
+    public String getMode(int position){
+        return mItems.get(position).getMode();
+    }
 }
