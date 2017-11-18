@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="jp.plen.scenography.activities.InitialScreen"
+    tools:context="jp.plen.plenconnect2.activities.InitialScreen"
     android:background="@color/plen_white">
 
     <LinearLayout

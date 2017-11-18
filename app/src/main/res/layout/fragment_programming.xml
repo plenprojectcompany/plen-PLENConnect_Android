@@ -26,7 +26,7 @@
                 android:textSize="@dimen/text_size_small"
                 android:theme="@style/OptionMenuTheme"/>
 
-            <jp.plen.scenography.views.PlenProgramView_
+            <jp.plen.plenconnect2.views.PlenProgramView_
                 android:id="@+id/program"
                 style="@style/PlenMotionListStyle"
                 android:layout_width="match_parent"

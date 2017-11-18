@@ -4,11 +4,11 @@ apply plugin: 'me.tatarka.retrolambda'
 
 def VERSION_CODE = 1
 def VERSION_NAME = "1.0.0"
-def PACKAGE_NAME = "jp.plen.scenography"
+def PACKAGE_NAME = "jp.plen.plenconnect2"
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId PACKAGE_NAME

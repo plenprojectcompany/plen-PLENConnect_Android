@@ -7,7 +7,7 @@
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
-    <jp.plen.scenography.views.PlenMotionView_
+    <jp.plen.plenconnect2.views.PlenMotionView_
         android:id="@+id/plenMotion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
