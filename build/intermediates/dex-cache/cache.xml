@@ -2,274 +2,130 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.4/c9478f1871de4c9cf723e5d497a14c7ad274a50b/jackson-databind-2.3.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c9478f1871de4c9cf723e5d497a14c7ad274a50b">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-databind-2.3.4_e0b8cd549013f9f6006634286d7f6e36b7a3e92d/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.2/7d6149d856b880bbd676047aacb8446a758fbbdb/androidannotations-api-3.3.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7d6149d856b880bbd676047aacb8446a758fbbdb">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/androidannotations-api-3.3.2_710d9406aea66bc917a74c086cacbf081e1020f2/classes.dex" />
-    </item>
-    <item
         is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.4/801fecfb8baf0ba5296e2d2ea0664f72b0761b9a/jackson-core-2.3.4.jar"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.1/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="801fecfb8baf0ba5296e2d2ea0664f72b0761b9a">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-core-2.3.4_e3c2af501afbd83560d96ba50642eadd1e817ea6.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-annotations-2.3.0_465a267152e500c2ddcf1ccb70971cdb3dbb2985/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.4/801fecfb8baf0ba5296e2d2ea0664f72b0761b9a/jackson-core-2.3.4.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="801fecfb8baf0ba5296e2d2ea0664f72b0761b9a">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/jackson-core-2.3.4_e3c2af501afbd83560d96ba50642eadd1e817ea6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-2.4.0_1d7abdbc2a65906d05f1ab4353b4e8bdb6777b16/classes.dex" />
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/support-annotations-27.1.1_ddf148381f00e3e1c8d204c2747e39a8adf81c56.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-annotations-2.3.0_465a267152e500c2ddcf1ccb70971cdb3dbb2985.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.eccyan/rxjava-optional/1.1.0/ea9f53b77cdc29027ec4ada483b5cafeb44aca2/rxjava-optional-1.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="0ea9f53b77cdc29027ec4ada483b5cafeb44aca2">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/rxjava-optional-1.1.0_2500b6d0fac7d27f4157ddfa329ec6cfa7b9ab12.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/support-annotations-22.2.0_067034f03cbd7cada6cd0dac8bf8f30b2b6584db.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/eventbus-2.4.0_1d7abdbc2a65906d05f1ab4353b4e8bdb6777b16.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/3.3.2/7d6149d856b880bbd676047aacb8446a758fbbdb/androidannotations-api-3.3.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7d6149d856b880bbd676047aacb8446a758fbbdb">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/androidannotations-api-3.3.2_710d9406aea66bc917a74c086cacbf081e1020f2.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-22.2.0_067034f03cbd7cada6cd0dac8bf8f30b2b6584db/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.eccyan/rxjava-optional/1.1.0/ea9f53b77cdc29027ec4ada483b5cafeb44aca2/rxjava-optional-1.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="0ea9f53b77cdc29027ec4ada483b5cafeb44aca2">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-optional-1.1.0_2500b6d0fac7d27f4157ddfa329ec6cfa7b9ab12/classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/.android/build-cache/fd04bc6fe3c4bab5b8a4e662c8d865154146870a/output/jars/classes.jar"
+        jar="/home/tacha/.android/build-cache/8f8a532608316fca0993b577b997a04dc80f2b0f/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes_a28d60004288cb0ebd1659af622f5b296a5d144e.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.android/build-cache/fd04bc6fe3c4bab5b8a4e662c8d865154146870a/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a28d60004288cb0ebd1659af622f5b296a5d144e/classes.dex" />
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/classes_56b71a1c682c484869c92addcfb9713a9d6fcb48.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.android/build-cache/922f669893f79741441a57bd7cab3650bdc35a64/output/jars/classes.jar"
+        jar="/home/tacha/.android/build-cache/5c8bb715fd3af29b169b793461310712a9baed76/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes_974dfdad7f90ce8d3c1933adfbfaba03fd1993d6.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="38b9835b1b1474b7729e029e866a9b520d23ea0f">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_811c2697e2b3222c2acc549895ba09e42837b51a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.android/build-cache/922f669893f79741441a57bd7cab3650bdc35a64/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="aa81bfe8c5cc88c2472ca936ae71f0c3dd1766df">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_974dfdad7f90ce8d3c1933adfbfaba03fd1993d6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.android/build-cache/448da4bcc2df905b6f2016b009dda906ced2612e/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="95f8d95f44b53eb05c0fd9735eb4ffffe2313f08">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c28f9d4e374308332badccc258f45fec55a2084/classes.dex" />
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/classes_45c5f25c97141c908c122833ee6d539709764c4c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.android/build-cache/448da4bcc2df905b6f2016b009dda906ced2612e/output/jars/classes.jar"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.3.0/f5e853a20b60758922453d56f9ae1e64af5cb3da/jackson-annotations-2.3.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="95f8d95f44b53eb05c0fd9735eb4ffffe2313f08">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes_1c28f9d4e374308332badccc258f45fec55a2084.jar" />
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.3.0_7411d7e5892ddf8d37cf52241828f388aa190b67.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.eccyan/rxjava-optional/1.1.0/ea9f53b77cdc29027ec4ada483b5cafeb44aca2/rxjava-optional-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ea9f53b77cdc29027ec4ada483b5cafeb44aca2">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/rxjava-optional-1.1.0_de852a157291596dbf57d44181bba28e44f53991.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/org.androidannotations/androidannotations-api/4.4.0/408080aab8ae945363152a98e50fa2e362d0d371/androidannotations-api-4.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="408080aab8ae945363152a98e50fa2e362d0d371">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/androidannotations-api-4.4.0_ec0f4beb0938ad99deda3c4645a1f9269e2aa0b5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/picasso-2.5.2_5c60d15d3b6906bce574ea01371acb70051450f0.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_4e31e288c5f7d8375c782378775e8ae8d1a79c75/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_5c60d15d3b6906bce574ea01371acb70051450f0/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.14/898f9ab61e2a23afd615f0b0389478bec86f49f9/rxjava-1.0.14.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="898f9ab61e2a23afd615f0b0389478bec86f49f9">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-1.0.14_3fd679a8825a5321f51b401d2403766d524f0695/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.android/build-cache/fd04bc6fe3c4bab5b8a4e662c8d865154146870a/output/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-22.2.0_b71de4d88cd3f523cd429c30db409571feb353b5/classes.dex" />
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_9e962f8d230049bd2097cd631790530ea3227b6f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.android/build-cache/4aebabb1416d59549a7ebccf2a12c9e6eaec80c9/output/jars/classes.jar"
+        jar="/home/tacha/.android/build-cache/ed054fa6e83b40e8c860e20a067e4e535c6dffde/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/classes_796dfbe07291edf64e10b55205412aa9e1e7e9c9.jar" />
+        sha1="95f8d95f44b53eb05c0fd9735eb4ffffe2313f08">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/classes_5c752d35b0557f6fbed8b6b4b814009f2f057646.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.14/898f9ab61e2a23afd615f0b0389478bec86f49f9/rxjava-1.0.14.jar"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.3.4/801fecfb8baf0ba5296e2d2ea0664f72b0761b9a/jackson-core-2.3.4.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="898f9ab61e2a23afd615f0b0389478bec86f49f9">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/rxjava-1.0.14_3fd679a8825a5321f51b401d2403766d524f0695.jar" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/Kazu/.android/build-cache/4aebabb1416d59549a7ebccf2a12c9e6eaec80c9/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_796dfbe07291edf64e10b55205412aa9e1e7e9c9/classes.dex" />
+        sha1="801fecfb8baf0ba5296e2d2ea0664f72b0761b9a">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/jackson-core-2.3.4_6a95980cb9ceb78d2a8b7961cd2253eb6338365d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/Kazu/.android/build-cache/fd04bc6fe3c4bab5b8a4e662c8d865154146870a/output/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/internal_impl-22.2.0_b71de4d88cd3f523cd429c30db409571feb353b5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/Kazu/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.4/c9478f1871de4c9cf723e5d497a14c7ad274a50b/jackson-databind-2.3.4.jar"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.3.4/c9478f1871de4c9cf723e5d497a14c7ad274a50b/jackson-databind-2.3.4.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="c9478f1871de4c9cf723e5d497a14c7ad274a50b">
-        <dex dex="/Users/Kazu/AndroidProjects/plen__Scenography_for_Android/app/build/intermediates/pre-dexed/release/jackson-databind-2.3.4_e0b8cd549013f9f6006634286d7f6e36b7a3e92d.jar" />
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/jackson-databind-2.3.4_38d7d69d21c06e119d5e8359b135384707c7221d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.0.14/898f9ab61e2a23afd615f0b0389478bec86f49f9/rxjava-1.0.14.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="898f9ab61e2a23afd615f0b0389478bec86f49f9">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/rxjava-1.0.14_880487285790027cf5455f984cd9a3e9734986b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.gradle/caches/modules-2/files-2.1/de.greenrobot/eventbus/2.4.0/ddd166d01b3158d1c00576d29f7ed15c030df719/eventbus-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/eventbus-2.4.0_9bfb454317e86dbec9e20d5b897e456ba511f227.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.android/build-cache/7449cbf622423bf04f4af712b1bfda09a4b28172/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/classes_a956cc9e335c5b0217b155e91a414003f891b7e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tacha/.android/build-cache/8f8a532608316fca0993b577b997a04dc80f2b0f/output/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/home/tacha/Documents/plen/plen-PLENConnect_Android/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0_ba4fe9f723fd5fe61a9f1f7be266f08f88b0f9a5.jar" />
     </item>
 
 </items>
