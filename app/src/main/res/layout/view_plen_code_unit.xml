@@ -7,7 +7,7 @@
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
-    <jp.plen.scenography.views.PlenMotionView_
+    <jp.plen.plenconnect2.views.PlenMotionView_
         android:id="@+id/plenMotion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,13 +25,13 @@
     <EditText
         android:id="@+id/loopCount"
         style="@style/PlenMotionListStyle"
-        android:layout_width="30pt"
+        android:layout_width="25pt"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/motion_loop_count_hint"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal"
         android:longClickable="false"
         android:textSize="@dimen/text_size_large"/>
 </LinearLayout>

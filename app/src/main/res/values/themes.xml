@@ -7,6 +7,8 @@
         <item name="android:textColorPrimary">@color/plen_black</item>
         <item name="android:textColorSecondary">@color/plen_black</item>
         <item name="windowActionModeOverlay">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@color/plen_white</item>
         <item name="android:textColor">@color/plen_black</item>
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background_indicator

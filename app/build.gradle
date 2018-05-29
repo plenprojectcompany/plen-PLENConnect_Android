@@ -4,16 +4,16 @@ apply plugin: 'me.tatarka.retrolambda'
 
 def VERSION_CODE = 1
 def VERSION_NAME = "1.0.0"
-def PACKAGE_NAME = "jp.plen.scenography"
+def PACKAGE_NAME = "jp.plen.plenconnect2"
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 27
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId PACKAGE_NAME
         minSdkVersion 21
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode VERSION_CODE
         versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -57,7 +57,7 @@ apt {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:support-annotations:22.2.0'
+    compile 'com.android.support:support-annotations:27.1.1'
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
     compile 'com.eccyan:rxjava-optional:1.1.0'
@@ -67,7 +67,7 @@ dependencies {
     def JacksonVersion = '2.3.4'
     compile "com.fasterxml.jackson.core:jackson-core:$JacksonVersion"
     compile "com.fasterxml.jackson.core:jackson-databind:$JacksonVersion"
-    def AAVersion = '3.3.2'
+    def AAVersion = '4.4.0'
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
     // unit test

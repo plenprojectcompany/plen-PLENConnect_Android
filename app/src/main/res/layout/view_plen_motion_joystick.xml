@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="wrap_content"
+android:layout_height="match_parent"
+android:background="?android:activatedBackgroundIndicator"
+android:gravity="center_vertical">
+
+<Button
+    android:id="@+id/rowButton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ripple_effect_motion_list_item"
+    android:visibility="invisible"
+    android:layout_below="@+id/motionIcon"
+    android:layout_alignTop="@+id/motionIcon" />
+
+<ImageView
+    android:id="@+id/motionIcon"
+    style="@style/PlenMotionListStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ripple_effect_motion_icon"
+    android:contentDescription="@string/motion_icon_description"
+    android:elevation="@dimen/elevation_low"
+    android:scaleType="fitCenter"
+    android:src="@drawable/no_icon"/>
+
+</RelativeLayout>

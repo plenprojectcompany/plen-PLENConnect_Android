@@ -19,29 +19,18 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageButton
+        <ImageView
             android:id="@+id/motionIcon"
             style="@style/PlenMotionListStyle"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="6dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_margin="3dp"
             android:background="@drawable/ripple_effect_motion_icon"
             android:contentDescription="@string/motion_icon_description"
             android:elevation="@dimen/elevation_low"
             android:padding="5dp"
             android:scaleType="fitCenter"
             android:src="@drawable/no_icon"/>
-
-        <TextView
-            android:id="@+id/motionNumber"
-            style="@style/PlenMotionListStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:text="@string/unknown_motion_id"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/grey_500"
-            android:textSize="@dimen/text_size_small"/>
 
         <TextView
             android:id="@+id/motionName"
@@ -51,6 +40,7 @@
             android:layout_weight="1"
             android:text="@string/unknown_motion_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="@dimen/text_size_large"/>
+            android:textSize="@dimen/text_size_xsmall"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 </RelativeLayout>

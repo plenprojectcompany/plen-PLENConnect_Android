@@ -19,11 +19,11 @@
             android:elevation="@dimen/elevation_low"
             android:gravity="bottom|center"
             android:paddingBottom="14dp"
-            android:text="@string/joystick_title"
+            android:text="@string/joystick_part"
             android:textSize="@dimen/text_size_small"
             android:theme="@style/OptionMenuTheme"/>
 
-        <jp.plen.scenography.views.JoystickView_
+        <jp.plen.plenconnect2.views.JoystickView_
             android:id="@+id/joystick"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
